@@ -1,0 +1,62 @@
+-- 1. Flight Offer Table
+CREATE TABLE FlightOffer (
+    FlightOfferID SERIAL PRIMARY KEY,
+    Source VARCHAR(255),
+    InstantTicketingRequired BOOLEAN,
+    NonHomogeneous BOOLEAN,
+    OneWay BOOLEAN,
+    LastTicketingDate DATE,
+    NumberOfBookableSeats INT,
+    TotalPrice DECIMAL(10, 2),
+    Currency VARCHAR(10),
+    GrandTotal DECIMAL(10, 2),
+    ValidatingAirlineCodes VARCHAR(10)
+);
+
+-- 2. Itinerary Table
+CREATE TABLE Itinerary (
+    ItineraryID VARCHAR(32) PRIMARY KEY,
+    FlightOfferID INT REFERENCES FlightOffer(FlightOfferID),
+    Duration VARCHAR(10),
+    SegmentID INT  -- Adjust based on your requirement
+);
+
+-- 3. Segment Table
+CREATE TABLE Segment (
+    SegmentID SERIAL PRIMARY KEY,
+    ItineraryID VARCHAR(32) REFERENCES Itinerary(ItineraryID),
+    DepartureIATACode VARCHAR(10),
+    DepartureTerminal VARCHAR(10),
+    DepartureTime TIMESTAMP,
+    ArrivalIATACode VARCHAR(10),
+    ArrivalTerminal VARCHAR(10),
+    ArrivalTime TIMESTAMP,
+    CarrierCode VARCHAR(10),
+    FlightNumber VARCHAR(10),
+    AircraftCode VARCHAR(10),
+    Duration VARCHAR(10),
+    NumberOfStops INT,
+    BlacklistedInEU BOOLEAN
+);
+
+-- 4. Traveler Pricing Table
+CREATE TABLE TravelerPricing (
+    TravelerPricingID SERIAL PRIMARY KEY,
+    FlightOfferID INT REFERENCES FlightOffer(FlightOfferID),
+    TravelerId VARCHAR(255),
+    FareOption VARCHAR(255),
+    TravelerType VARCHAR(50),
+    PriceTotal DECIMAL(10, 2),
+    Currency VARCHAR(10)
+);
+
+-- 5. Fare Details by Segment Table
+CREATE TABLE FareDetailsBySegment (
+    FareDetailID SERIAL PRIMARY KEY,
+    TravelerPricingID INT REFERENCES TravelerPricing(TravelerPricingID),
+    SegmentID INT REFERENCES Segment(SegmentID),
+    Cabin VARCHAR(50),
+    FareBasis VARCHAR(50),
+    Class VARCHAR(10),
+    IncludedCheckedBagsQuantity INT
+);
