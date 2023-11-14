@@ -17,8 +17,8 @@ CREATE TABLE FlightOffer (
 CREATE TABLE Itinerary (
     ItineraryID VARCHAR(32) PRIMARY KEY,
     FlightOfferID INT REFERENCES FlightOffer(FlightOfferID),
-    Duration VARCHAR(10),
-    SegmentID INT  -- Adjust based on your requirement
+    Duration VARCHAR(10)
+    -- SegmentID INT
 );
 
 -- 3. Segment Table

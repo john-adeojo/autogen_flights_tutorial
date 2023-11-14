@@ -46,6 +46,10 @@ def process_amadeus_data(data, engine):
             for traveler_pricing in offer['travelerPricings']:
                 traveler_pricing_id = insert_update_traveler_pricing(traveler_pricing, flight_offer_id, connection)
 
+                for fare_detail in traveler_pricing['fareDetailsBySegment']:
+                    fare_detail_id = insert_update_fare_detail(fare_detail, segment_id, traveler_pricing_id, connection)
+
+
 def generate_itinerary_id(offer_id, itinerary_data):
     """
     Generate a unique ID for an itinerary based on the flight offer ID and itinerary details.
@@ -170,7 +174,7 @@ def insert_update_traveler_pricing(traveler_pricing, flight_offer_id, connection
 
 
 # Function for inserting or updating FareDetailsBySegment
-def insert_update_fare_detail(fare_detail, traveler_pricing_id, connection):
+def insert_update_fare_detail(fare_detail, segment_id, traveler_pricing_id, connection):
     fare_detail_sql = """
     INSERT INTO FareDetailsBySegment (FareDetailID, TravelerPricingID, SegmentID, Cabin, 
     FareBasis, Class, IncludedCheckedBagsQuantity)
@@ -186,13 +190,14 @@ def insert_update_fare_detail(fare_detail, traveler_pricing_id, connection):
     fare_detail_id = fare_detail.get('id')  # Replace with your logic if 'id' is not available
 
     params = {
-        'FareDetailID': fare_detail_id,
+        'FareDetailID': segment_id,
         'TravelerPricingID': traveler_pricing_id,
         'SegmentID': fare_detail['segmentId'],
         'Cabin': fare_detail['cabin'],
         'FareBasis': fare_detail['fareBasis'],
         'Class': fare_detail['class'],
-        'IncludedCheckedBagsQuantity': fare_detail['includedCheckedBags']['quantity'] if 'includedCheckedBags' in fare_detail else 0
+        'IncludedCheckedBagsQuantity': fare_detail.get('includedCheckedBags', {}).get('quantity', 0)
+        # 'IncludedCheckedBagsQuantity': fare_detail['includedCheckedBags']['quantity'] if 'includedCheckedBags' in fare_detail else 0
     }
     result = connection.execute(text(fare_detail_sql), params)
     return result.fetchone()[0]
