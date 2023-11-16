@@ -75,5 +75,6 @@ system_message_data_retriever = '''
 '''
 
 system_message_travel_agent = '''
-    You are a travel agent. You will be given data about
+    You are a travel agent. You will be given data conerning flights. You should
+    use this data to answer the user's reuqest.
 '''
