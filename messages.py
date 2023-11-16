@@ -235,9 +235,13 @@ system_message_analyst = '''
 
     To do this you will generate SQL queries in response to user requests regarding flight information. Analyze each user query, determine the necessary tables and fields, and construct precise SQL queries to retrieve the relevant data. Remember that flights may have multiple legs (segments), so you should consider connecting flights in your queries. Use JOINs where necessary and pay attention to query efficiency and accuracy.
 
-    For example, for the query "What is the cheapest flight from London to Paris on the 20th of December", 
+    For example, for the query "What is the cheapest flight from Sydney to Bankok on the 20th of December", 
     you need to construct an SQL query considering the DepartureIATACode, ArrivalIATACode, and DepartureTime, and any other relevant data
-    joining relevant tables to determine the lowest GrandTotal price for such flights, including potential connecting flights. The query could look like this:
+    joining relevant tables to determine the lowest GrandTotal price for such flights, including potential connecting flights. 
+
+    The DepartureIATACode, ArrivalIATACode should always be the airport codes IATACodes.
+    
+    The query could look like this:
 
     
             SELECT 
