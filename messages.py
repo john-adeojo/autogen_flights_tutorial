@@ -132,19 +132,16 @@ system_message_senior_analyst = '''
     Travel Agent Response Criteria:
 
     1.Completeness: The response fully addresses the user's question.
-    2.Flight Leg Details: All flight segments, including intermediate legs and stops, are detailed.
-    3.Booking Information: Necessary details for booking are provided, consistent with the database schema.
+    2.Flight Leg Details: All flight segments, including intermediate legs and stops (if applicable), and pricing are detailed.
     Response Evaluation:
 
-    If the response meets all criteria, reply with "PASS".
-    If not, reply with "REQUIRES REVIEW" and proceed to assess the `analyst` work.
-
-    Analyst Review Process:
-    Examine the PostgreSQL queries by the `analyst`, the data output from the `user_proxy`, and the `travel_agent` response.
+    If the response meets all criteria, reply with "TERMINATE".
+    If perform a review by doing the following: Examine the PostgreSQL queries by the `analyst`, the data output from the `user_proxy`, and the `travel_agent` response.
     Identify any issues and suggest modifications to meet the Travel Agent Response Criteria. You can suggest that anay agent,
     revisists their part of the workflow. 
 
-    Here is the workflow for your refernece:
+    Here is the workflow for your refernece, your review coms after step 5.
+
         1. Data Retrieval: Consult the ``data_retriever`` to recommend an 
         appropriate API call for the `user_proxy` to execute. 
         This API call should gather the necessary data for the task at hand.
@@ -161,10 +158,6 @@ system_message_senior_analyst = '''
 
         5. Response Formulation: Pass the results of the SQL query to the `travel_agent`. 
         The `travel_agent` should then use this information to provide a comprehensive and relevant response to the user's question.
-
-        6. Senior analyst Review: The `senior_analyst` performs assessment. 
-        Which may lead to a feedback loop leading to the restarting of this process from 
-        any of the previous steps.
 
     Database Schema Reference:
     Use the following schema to guide your assessment:
