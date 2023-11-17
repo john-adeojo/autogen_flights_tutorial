@@ -89,8 +89,27 @@ def insert_update_flight_offer(offer, connection):
     return flight_offer_id
 
 # Function for inserting or updating Itinerary
+import re
+from sqlalchemy import text
+
+def parse_duration(duration_str):
+    # Find hours and minutes using regular expressions
+    hours_match = re.search(r'(\d+)H', duration_str)
+    minutes_match = re.search(r'(\d+)M', duration_str)
+
+    # Convert hours and minutes to float
+    hours = float(hours_match.group(1)) if hours_match else 0
+    minutes = float(minutes_match.group(1)) if minutes_match else 0
+
+    # Convert minutes to a fraction of an hour and add to hours
+    total_duration = hours + minutes / 60
+    return total_duration
+
 def insert_update_itinerary(itinerary, flight_offer_id, connection):
     itinerary_id = generate_itinerary_id(flight_offer_id, itinerary)
+
+    # Parse the duration string to convert it into a float
+    duration_float = parse_duration(itinerary['duration'])
 
     itinerary_sql = """
     INSERT INTO Itinerary (ItineraryID, FlightOfferID, Duration)
@@ -103,13 +122,34 @@ def insert_update_itinerary(itinerary, flight_offer_id, connection):
     params = {
         'ItineraryID': itinerary_id,
         'FlightOfferID': flight_offer_id,
-        'Duration': itinerary['duration']
+        'Duration': duration_float
     }
     result = connection.execute(text(itinerary_sql), params)
     return result.fetchone()[0]
+# def insert_update_itinerary(itinerary, flight_offer_id, connection):
+#     itinerary_id = generate_itinerary_id(flight_offer_id, itinerary)
+
+#     itinerary_sql = """
+#     INSERT INTO Itinerary (ItineraryID, FlightOfferID, Duration)
+#     VALUES (:ItineraryID, :FlightOfferID, :Duration)
+#     ON CONFLICT (ItineraryID) DO UPDATE SET
+#     FlightOfferID = EXCLUDED.FlightOfferID, Duration = EXCLUDED.Duration
+#     RETURNING ItineraryID;
+#     """
+    
+#     params = {
+#         'ItineraryID': itinerary_id,
+#         'FlightOfferID': flight_offer_id,
+#         'Duration': itinerary['duration']
+#     }
+#     result = connection.execute(text(itinerary_sql), params)
+#     return result.fetchone()[0]
 
 # Function for inserting or updating Segment
 def insert_update_segment(segment, itinerary_id, connection):
+
+    duration_float = parse_duration(segment['duration'])
+
     segment_sql = """
     INSERT INTO Segment (SegmentID, ItineraryID, DepartureIATACode, DepartureTerminal, DepartureTime,
     ArrivalIATACode, ArrivalTerminal, ArrivalTime, CarrierCode, FlightNumber, AircraftCode,
@@ -139,7 +179,7 @@ def insert_update_segment(segment, itinerary_id, connection):
         'CarrierCode': segment['carrierCode'],
         'FlightNumber': segment['number'],
         'AircraftCode': segment['aircraft']['code'],
-        'Duration': segment['duration'],
+        'Duration': duration_float,
         'NumberOfStops': segment.get('numberOfStops', 0),
         'BlacklistedInEU': segment.get('blacklistedInEU', False)
     }

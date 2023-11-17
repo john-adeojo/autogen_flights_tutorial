@@ -17,7 +17,7 @@ CREATE TABLE FlightOffer (
 CREATE TABLE Itinerary (
     ItineraryID VARCHAR(32) PRIMARY KEY,
     FlightOfferID INT REFERENCES FlightOffer(FlightOfferID),
-    Duration VARCHAR(10)
+    Duration FLOAT
     -- SegmentID INT
 );
 
@@ -34,7 +34,7 @@ CREATE TABLE Segment (
     CarrierCode VARCHAR(10),
     FlightNumber VARCHAR(10),
     AircraftCode VARCHAR(10),
-    Duration VARCHAR(10),
+    Duration FLOAT,
     NumberOfStops INT,
     BlacklistedInEU BOOLEAN
 );

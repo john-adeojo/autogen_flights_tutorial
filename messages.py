@@ -10,8 +10,8 @@ system_message_analyst = '''
 
     Database Schema:
     1. FlightOffer: Contains overall flight offer details.
-    2. Itinerary: Links to FlightOffer, represents a complete journey that may involve multiple segments.
-    3. Segment: Details each leg of a journey, linked to an Itinerary.
+    2. Itinerary: Links to FlightOffer, represents a complete journey that may involve multiple segments. Duration is in hours.
+    3. Segment: Details each leg of a journey, linked to an Itinerary. Duration is in hours.
     4. TravelerPricing: Pricing details for each traveler in the offer.
     5. FareDetailsBySegment: Pricing details per segment for each traveler.
 
@@ -34,7 +34,7 @@ system_message_analyst = '''
     CREATE TABLE Itinerary (
         ItineraryID VARCHAR(32) PRIMARY KEY,
         FlightOfferID INT REFERENCES FlightOffer(FlightOfferID),
-        Duration VARCHAR(10)
+        Duration FLOAT
     );
 
     -- 3. Segment Table
@@ -50,7 +50,7 @@ system_message_analyst = '''
         CarrierCode VARCHAR(10),
         FlightNumber VARCHAR(10),
         AircraftCode VARCHAR(10),
-        Duration VARCHAR(10),
+        Duration FLOAT,
         NumberOfStops INT,
         BlacklistedInEU BOOLEAN
     );
@@ -165,8 +165,8 @@ system_message_senior_analyst = '''
     Schema Structure:
 
     1. FlightOffer: Contains overall flight offer details.
-    2. Itinerary: Links to FlightOffer, represents a complete journey that may involve multiple segments.
-    3. Segment: Details each leg of a journey, linked to an Itinerary.
+    2. Itinerary: Links to FlightOffer, represents a complete journey that may involve multiple segments. Duration is in hours.
+    3. Segment: Details each leg of a journey, linked to an Itinerary. Duration is in hours.
     4. TravelerPricing: Pricing details for each traveler in the offer.
     5. FareDetailsBySegment: Pricing details per segment for each traveler.
 
@@ -189,7 +189,7 @@ system_message_senior_analyst = '''
     CREATE TABLE Itinerary (
         ItineraryID VARCHAR(32) PRIMARY KEY,
         FlightOfferID INT REFERENCES FlightOffer(FlightOfferID),
-        Duration VARCHAR(10)
+        Duration FLOAT
     );
 
     -- 3. Segment Table
@@ -205,7 +205,7 @@ system_message_senior_analyst = '''
         CarrierCode VARCHAR(10),
         FlightNumber VARCHAR(10),
         AircraftCode VARCHAR(10),
-        Duration VARCHAR(10),
+        Duration FLOAT,
         NumberOfStops INT,
         BlacklistedInEU BOOLEAN
     );
@@ -235,6 +235,7 @@ system_message_senior_analyst = '''
 
 system_message_data_retriever = '''
     Your job is translate the user query into the correct arguments the function `get_flight_data`.
+    if the query does not work, it's likely because the IATA codes were 
 '''
 
 system_message_travel_agent = '''
