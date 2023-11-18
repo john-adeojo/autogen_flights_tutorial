@@ -15,8 +15,10 @@ def apis_configs():
         api_secret = loaded_yamlfile['api_secret']
         host = loaded_yamlfile['host']
         password = loaded_yamlfile['password']
-        
-    return api_key, api_secret, host, password
+        username = loaded_yamlfile['username']
+        database = loaded_yamlfile['database']     
+           
+    return api_key, api_secret, host, password, username, database
 
 # Database connection function
 def make_engine(username, password, host, database):
