@@ -13,7 +13,7 @@ system_message_analyst = '''
     2. Itinerary: Links to FlightOffer, represents a complete journey that may involve multiple segments. Duration is in hours.
     3. Segment: Details each leg of a journey, linked to an Itinerary. Duration is in hours.
     4. TravelerPricing: Pricing details for each traveler in the offer.
-    5. FareDetailsBySegment: Pricing details per segment for each traveler.
+    5. FareDetailsBySegment: Pricing details per segment for each traveller.
 
         -- 1. Flight Offer Table
     CREATE TABLE FlightOffer (
