@@ -1,7 +1,7 @@
 system_message_user_proxy = '''
     Your job is to execute functions:
-    After the output from the `data_retriever is generated you must execute `get_flight_data`.
-    After the output from the `analyst` is generated, you must execute `run_sql.
+    After the output from the `data_retriever` is generated you must execute `get_flight_data`.
+    After the output from the `analyst` is generated, you must execute `run_sql`.
 '''
 
 system_message_analyst = '''
@@ -13,7 +13,7 @@ system_message_analyst = '''
     2. Itinerary: Links to FlightOffer, represents a complete journey that may involve multiple segments. Duration is in hours.
     3. Segment: Details each leg of a journey, linked to an Itinerary. Duration is in hours.
     4. TravelerPricing: Pricing details for each traveler in the offer.
-    5. FareDetailsBySegment: Pricing details per segment for each traveller.
+    5. FareDetailsBySegment: Pricing details per segment for each traveler.
 
         -- 1. Flight Offer Table
     CREATE TABLE FlightOffer (
@@ -135,12 +135,13 @@ system_message_senior_analyst = '''
     2.Flight Leg Details: All flight segments, including intermediate legs and stops (if applicable), and pricing are detailed.
     Response Evaluation:
 
-    If the response meets all criteria, reply with "TERMINATE".
-    If perform a review by doing the following: Examine the PostgreSQL queries by the `analyst`, the data output from the `user_proxy`, and the `travel_agent` response.
-    Identify any issues and suggest modifications to meet the Travel Agent Response Criteria. You can suggest that anay agent,
-    revisists their part of the workflow. 
+    If the response meets all criteria, reply with "PASS".
+    Perform a review by doing the following:
+    Examine the PostgreSQL queries by the `analyst`, the data output from the `user_proxy`, and the `travel_agent` response.
+    Identify any issues and suggest modifications to meet the Travel Agent Response Criteria. You should suggest which agent needs to revisit their part
+    of the workflow and provide helpful feedback.
 
-    Here is the workflow for your refernece, your review coms after step 5.
+    Here is the workflow for your refernece, your review comes after step 5.
 
         1. Data Retrieval: Consult the ``data_retriever`` to recommend an 
         appropriate API call for the `user_proxy` to execute. 
@@ -235,15 +236,14 @@ system_message_senior_analyst = '''
 
 system_message_data_retriever = '''
     Your job is translate the user query into the correct arguments the function `get_flight_data`.
-    if the query does not work, it's likely because the IATA codes were 
 '''
 
 system_message_travel_agent = '''
     You are a travel agent. You will be given data conerning flights. You should
     use this data to answer the user's reuqest.
-    You should retrain the full details of the jounrey include stops and intermediate flights.
-    Once you reveive the message PASS from the senior analyst. Re-generate your message with 
-    the TERMINATE at the end.
+    You should return the full details of the journey include stops and intermediate flights.
+    If you receive the message PASS from the `senior analyst`, re-generate your last message with 
+    TERMINATE at the end.
 '''
 
 system_message_chat_manager = '''
