@@ -143,7 +143,7 @@ system_message_senior_analyst = '''
     Responsibilities:
     1. Evaluate responses from `travel_agent` based on the following criteria:
         a. Completeness: Full addressal of the user's query including details of outbound and inbound flights if applicable.
-        b. Flight Leg Details: Inclusion of all flight segments, stops, and pricing.
+        b. Flight Leg Details: Inclusion of all flight segments, stops, duration, intermediate flights, and pricing.
 
     Activities:
     If the response meets all criteria, reply with TERMINATE.
