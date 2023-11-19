@@ -1,7 +1,7 @@
 chat_manager (to chat_manager):
 
 Show me the cheapest flights from London to Paris, leaving on the 
-    16th of December 2023 and returning on the 19th January 2024.
+    16th of December 2023 and returning on the 19th of January 2024.
 
 
 --------------------------------------------------------------------------------
@@ -14,37 +14,111 @@ Arguments:
   "destinationLocationCode": "PAR",
   "departureDate": "2023-12-16",
   "returnDate": "2024-01-19",
-  "adults": 1
+  "adults": 1,
+  "currencyCode": "USD",
+  "max": 1
 }
 ****************************************************
 
 --------------------------------------------------------------------------------
 
 >>>>>>>> EXECUTING FUNCTION get_flight_data...
-Request parameters: {'originLocationCode': 'LON', 'destinationLocationCode': 'PAR', 'departureDate': '2023-12-16', 'adults': 1, 'returnDate': '2024-01-19', 'nonStop': 'false', 'max': 5}
-DEBUG:amadeus:Request parameters: {'originLocationCode': 'LON', 'destinationLocationCode': 'PAR', 'departureDate': '2023-12-16', 'adults': 1, 'returnDate': '2024-01-19', 'nonStop': 'false', 'max': 5}
-Response data: [{'type': 'flight-offer', 'id': '1', 'source': 'GDS', 'instantTicketingRequired': False, 'nonHomogeneous': False, 'oneWay': False, 'lastTicketingDate': '2023-11-20', 'lastTicketingDateTime': '2023-11-20', 'numberOfBookableSeats': 9, 'itineraries': [{'duration': 'PT16H25M', 'segments': [{'departure': {'iataCode': 'LGW', 'terminal': 'S', 'at': '2023-12-16T17:40:00'}, 'arrival': {'iataCode': 'OSL', 'at': '2023-12-16T20:50:00'}, 'carrierCode': 'DY', 'number': '1309', 'aircraft': {'code': '73H'}, 'operating': {'carrierCode': 'DY'}, 'duration': 'PT2H10M', 'id': '4', 'numberOfStops': 0, 'blacklistedInEU': False}, {'departure': {'iataCode': 'OSL', 'at': '2023-12-17T08:40:00'}, 'arrival': {'iataCode': 'CDG', 'terminal': '2B', 'at': '2023-12-17T11:05:00'}, 'carrierCode': 'DY', 'number': '1494', 'aircraft': {'code': '73H'}, 'operating': {'carrierCode': 'DY'}, 'duration': 'PT2H25M', 'id': '5', 'numberOfStops': 0, 'blacklistedInEU': False}]}, {'duration': 'PT6H15M', 'segments': [{'departure': {'iataCode': 'CDG', 'terminal': '2B', 'at': '2024-01-19T11:45:00'}, 'arrival': {'iataCode': 'OSL', 'at': '2024-01-19T14:05:00'}, 'carrierCode': 'DY', 'number': '1495', 'aircraft': {'code': '73H'}, 'operating': {'carrierCode': 'DY'}, 'duration': 'PT2H20M', 'id': '8', 'numberOfStops': 0, 'blacklistedInEU': False}, {'departure': {'iataCode': 'OSL', 'at': '2024-01-19T15:30:00'}, 'arrival': {'iataCode': 'LGW', 'terminal': 'S', 'at': '2024-01-19T17:00:00'}, 'carrierCode': 'DY', 'number': '1308', 'aircraft': {'code': '73H'}, 'operating': {'carrierCode': 'DY'}, 'duration': 'PT2H30M', 'id': '9', 'numberOfStops': 0, 'blacklistedInEU': False}]}], 'price': {'currency': 'EUR', 'total': '137.39', 'base': '62.00', 'fees': [{'amount': '0.00', 'type': 'SUPPLIER'}, {'amount': '0.00', 'type': 'TICKETING'}], 'grandTotal': '137.39', 'additionalServices': [{'amount': '80.00', 'type': 'CHECKED_BAGS'}]}, 'pricingOptions': {'fareType': ['PUBLISHED'], 'includedCheckedBagsOnly': False}, 'validatingAirlineCodes': ['DY'], 'travelerPricings': [{'travelerId': '1', 'fareOption': 'STANDARD', 'travelerType': 'ADULT', 'price': {'currency': 'EUR', 'total': '137.39', 'base': '62.00'}, 'fareDetailsBySegment': [{'segmentId': '4', 'cabin': 'ECONOMY', 'fareBasis': 'QLCALF', 'brandedFare': 'LOWFARE', 'class': 'Q', 'includedCheckedBags': {'quantity': 0}}, {'segmentId': '5', 'cabin': 'ECONOMY', 'fareBasis': 'QCALF', 'brandedFare': 'LOWFARE', 'class': 'Q', 'includedCheckedBags': {'quantity': 0}}, {'segmentId': '8', 'cabin': 'ECONOMY', 'fareBasis': 'QCALF', 'brandedFare': 'LOWFARE', 'class': 'Q', 'includedCheckedBags': {'quantity': 0}}, {'segmentId': '9', 'cabin': 'ECONOMY', 'fareBasis': 'QLCALF', 'brandedFare': 'LOWFARE', 'class': 'Q', 'includedCheckedBags': {'quantity': 0}}]}]}, {'type': 'flight-offer', 'id': '2', 'source': 'GDS', 'instantTicketingRequired': False, 'nonHomogeneous': False, 'oneWay': False, 'lastTicketingDate': '2023-11-20', 'lastTicketingDateTime': '2023-11-20', 'numberOfBookableSeats': 9, 'itineraries': [{'duration': 'PT16H25M', 'segments': [{'departure': {'iataCode': 'LGW', 'terminal': 'S', 'at': '2023-12-16T17:40:00'}, 'arrival': {'iataCode': 'OSL', 'at': '2023-12-16T20:50:00'}, 'carrierCode': 'DY', 'number': '1309', 'aircraft': {'code': '73H'}, 'operating': {'carrierCode': 'DY'}, 'duration': 'PT2H10M', 'id': '4', 'numberOfStops': 0, 'blacklistedInEU': False}, {'departure': {'iataCode': 'OSL', 'at': '2023-12-17T08:40:00'}, 'arrival': {'iataCode': 'CDG', 'terminal': '2B', 'at': '2023-12-17T11:05:00'}, 'carrierCode': 'DY', 'number': '1494', 'aircraft': {'code': '73H'}, 'operating': {'carrierCode': 'DY'}, 'duration': 'PT2H25M', 'id': '5', 'numberOfStops': 0, 'blacklistedInEU': False}]}, {'duration': 'PT9H30M', 'segments': [{'departure': {'iataCode': 'CDG', 'terminal': '2B', 'at': '2024-01-19T11:45:00'}, 'arrival': {'iataCode': 'OSL', 'at': '2024-01-19T14:05:00'}, 'carrierCode': 'DY', 'number': '1495', 'aircraft': {'code': '73H'}, 'operating': {'carrierCode': 'DY'}, 'duration': 'PT2H20M', 'id': '11', 'numberOfStops': 0, 'blacklistedInEU': False}, {'departure': {'iataCode': 'OSL', 'at': '2024-01-19T18:45:00'}, 'arrival': {'iataCode': 'LGW', 'terminal': 'S', 'at': '2024-01-19T20:15:00'}, 'carrierCode': 'DY', 'number': '1310', 'aircraft': {'code': '73H'}, 'operating': {'carrierCode': 'DY'}, 'duration': 'PT2H30M', 'id': '12', 'numberOfStops': 0, 'blacklistedInEU': False}]}], 'price': {'currency': 'EUR', 'total': '137.39', 'base': '62.00', 'fees': [{'amount': '0.00', 'type': 'SUPPLIER'}, {'amount': '0.00', 'type': 'TICKETING'}], 'grandTotal': '137.39', 'additionalServices': [{'amount': '80.00', 'type': 'CHECKED_BAGS'}]}, 'pricingOptions': {'fareType': ['PUBLISHED'], 'includedCheckedBagsOnly': False}, 'validatingAirlineCodes': ['DY'], 'travelerPricings': [{'travelerId': '1', 'fareOption': 'STANDARD', 'travelerType': 'ADULT', 'price': {'currency': 'EUR', 'total': '137.39', 'base': '62.00'}, 'fareDetailsBySegment': [{'segmentId': '4', 'cabin': 'ECONOMY', 'fareBasis': 'QLCALF', 'brandedFare': 'LOWFARE', 'class': 'Q', 'includedCheckedBags': {'quantity': 0}}, {'segmentId': '5', 'cabin': 'ECONOMY', 'fareBasis': 'QCALF', 'brandedFare': 'LOWFARE', 'class': 'Q', 'includedCheckedBags': {'quantity': 0}}, {'segmentId': '11', 'cabin': 'ECONOMY', 'fareBasis': 'QCALF', 'brandedFare': 'LOWFARE', 'class': 'Q', 'includedCheckedBags': {'quantity': 0}}, {'segmentId': '12', 'cabin': 'ECONOMY', 'fareBasis': 'QLCALF', 'brandedFare': 'LOWFARE', 'class': 'Q', 'includedCheckedBags': {'quantity': 0}}]}]}, {'type': 'flight-offer', 'id': '3', 'source': 'GDS', 'instantTicketingRequired': False, 'nonHomogeneous': False, 'oneWay': False, 'lastTicketingDate': '2023-11-20', 'lastTicketingDateTime': '2023-11-20', 'numberOfBookableSeats': 9, 'itineraries': [{'duration': 'PT16H25M', 'segments': [{'departure': {'iataCode': 'LGW', 'terminal': 'S', 'at': '2023-12-16T17:40:00'}, 'arrival': {'iataCode': 'OSL', 'at': '2023-12-16T20:50:00'}, 'carrierCode': 'DY', 'number': '1309', 'aircraft': {'code': '73H'}, 'operating': {'carrierCode': 'DY'}, 'duration': 'PT2H10M', 'id': '4', 'numberOfStops': 0, 'blacklistedInEU': False}, {'departure': {'iataCode': 'OSL', 'at': '2023-12-17T08:40:00'}, 'arrival': {'iataCode': 'CDG', 'terminal': '2B', 'at': '2023-12-17T11:05:00'}, 'carrierCode': 'DY', 'number': '1494', 'aircraft': {'code': '73H'}, 'operating': {'carrierCode': 'DY'}, 'duration': 'PT2H25M', 'id': '5', 'numberOfStops': 0, 'blacklistedInEU': False}]}, {'duration': 'PT21H50M', 'segments': [{'departure': {'iataCode': 'CDG', 'terminal': '2B', 'at': '2024-01-19T11:45:00'}, 'arrival': {'iataCode': 'OSL', 'at': '2024-01-19T14:05:00'}, 'carrierCode': 'DY', 'number': '1495', 'aircraft': {'code': '73H'}, 'operating': {'carrierCode': 'DY'}, 'duration': 'PT2H20M', 'id': '13', 'numberOfStops': 0, 'blacklistedInEU': False}, {'departure': {'iataCode': 'OSL', 'at': '2024-01-20T07:00:00'}, 'arrival': {'iataCode': 'LGW', 'terminal': 'S', 'at': '2024-01-20T08:35:00'}, 'carrierCode': 'DY', 'number': '1302', 'aircraft': {'code': '73H'}, 'operating': {'carrierCode': 'DY'}, 'duration': 'PT2H35M', 'id': '14', 'numberOfStops': 0, 'blacklistedInEU': False}]}], 'price': {'currency': 'EUR', 'total': '150.39', 'base': '75.00', 'fees': [{'amount': '0.00', 'type': 'SUPPLIER'}, {'amount': '0.00', 'type': 'TICKETING'}], 'grandTotal': '150.39', 'additionalServices': [{'amount': '80.00', 'type': 'CHECKED_BAGS'}]}, 'pricingOptions': {'fareType': ['PUBLISHED'], 'includedCheckedBagsOnly': False}, 'validatingAirlineCodes': ['DY'], 'travelerPricings': [{'travelerId': '1', 'fareOption': 'STANDARD', 'travelerType': 'ADULT', 'price': {'currency': 'EUR', 'total': '150.39', 'base': '75.00'}, 'fareDetailsBySegment': [{'segmentId': '4', 'cabin': 'ECONOMY', 'fareBasis': 'QLCALF', 'brandedFare': 'LOWFARE', 'class': 'Q', 'includedCheckedBags': {'quantity': 0}}, {'segmentId': '5', 'cabin': 'ECONOMY', 'fareBasis': 'QCALF', 'brandedFare': 'LOWFARE', 'class': 'Q', 'includedCheckedBags': {'quantity': 0}}, {'segmentId': '13', 'cabin': 'ECONOMY', 'fareBasis': 'QCALF', 'brandedFare': 'LOWFARE', 'class': 'Q', 'includedCheckedBags': {'quantity': 0}}, {'segmentId': '14', 'cabin': 'ECONOMY', 'fareBasis': 'HLLF', 'brandedFare': 'LOWFARE', 'class': 'H', 'includedCheckedBags': {'quantity': 0}}]}]}, {'type': 'flight-offer', 'id': '4', 'source': 'GDS', 'instantTicketingRequired': False, 'nonHomogeneous': False, 'oneWay': False, 'lastTicketingDate': '2023-11-20', 'lastTicketingDateTime': '2023-11-20', 'numberOfBookableSeats': 7, 'itineraries': [{'duration': 'PT20H15M', 'segments': [{'departure': {'iataCode': 'LGW', 'terminal': 'S', 'at': '2023-12-16T11:55:00'}, 'arrival': {'iataCode': 'MLA', 'at': '2023-12-16T16:05:00'}, 'carrierCode': 'KM', 'number': '117', 'aircraft': {'code': '32N'}, 'operating': {'carrierCode': 'KM'}, 'duration': 'PT3H10M', 'id': '1', 'numberOfStops': 0, 'blacklistedInEU': False}, {'departure': {'iataCode': 'MLA', 'at': '2023-12-17T06:15:00'}, 'arrival': {'iataCode': 'CDG', 'terminal': '2D', 'at': '2023-12-17T09:10:00'}, 'carrierCode': 'KM', 'number': '478', 'aircraft': {'code': '32N'}, 'operating': {'carrierCode': 'KM'}, 'duration': 'PT2H55M', 'id': '2', 'numberOfStops': 0, 'blacklistedInEU': False}]}, {'duration': 'PT10H5M', 'segments': [{'departure': {'iataCode': 'CDG', 'terminal': '2D', 'at': '2024-01-19T10:20:00'}, 'arrival': {'iataCode': 'MLA', 'at': '2024-01-19T13:05:00'}, 'carrierCode': 'KM', 'number': '479', 'aircraft': {'code': '32N'}, 'operating': {'carrierCode': 'KM'}, 'duration': 'PT2H45M', 'id': '6', 'numberOfStops': 0, 'blacklistedInEU': False}, {'departure': {'iataCode': 'MLA', 'at': '2024-01-19T16:55:00'}, 'arrival': {'iataCode': 'LHR', 'terminal': '4', 'at': '2024-01-19T19:25:00'}, 'carrierCode': 'KM', 'number': '102', 'aircraft': {'code': '32N'}, 'operating': {'carrierCode': 'KM'}, 'duration': 'PT3H30M', 'id': '7', 'numberOfStops': 0, 'blacklistedInEU': False}]}], 'price': {'currency': 'EUR', 'total': '229.81', 'base': '104.00', 'fees': [{'amount': '0.00', 'type': 'SUPPLIER'}, {'amount': '0.00', 'type': 'TICKETING'}], 'grandTotal': '229.81', 'additionalServices': [{'amount': '160.00', 'type': 'CHECKED_BAGS'}]}, 'pricingOptions': {'fareType': ['PUBLISHED'], 'includedCheckedBagsOnly': False}, 'validatingAirlineCodes': ['KM'], 'travelerPricings': [{'travelerId': '1', 'fareOption': 'STANDARD', 'travelerType': 'ADULT', 'price': {'currency': 'EUR', 'total': '229.81', 'base': '104.00'}, 'fareDetailsBySegment': [{'segmentId': '1', 'cabin': 'ECONOMY', 'fareBasis': 'RLR0NBG0', 'brandedFare': 'GL', 'class': 'R', 'includedCheckedBags': {'quantity': 0}}, {'segmentId': '2', 'cabin': 'ECONOMY', 'fareBasis': 'RLR0NBG0', 'brandedFare': 'GL', 'class': 'R', 'includedCheckedBags': {'quantity': 0}}, {'segmentId': '6', 'cabin': 'ECONOMY', 'fareBasis': 'RLR0NBG0', 'brandedFare': 'GL', 'class': 'R', 'includedCheckedBags': {'quantity': 0}}, {'segmentId': '7', 'cabin': 'ECONOMY', 'fareBasis': 'RLR0NBG0', 'brandedFare': 'GL', 'class': 'R', 'includedCheckedBags': {'quantity': 0}}]}]}, {'type': 'flight-offer', 'id': '5', 'source': 'GDS', 'instantTicketingRequired': False, 'nonHomogeneous': False, 'oneWay': False, 'lastTicketingDate': '2023-12-16', 'lastTicketingDateTime': '2023-12-16', 'numberOfBookableSeats': 7, 'itineraries': [{'duration': 'PT1H20M', 'segments': [{'departure': {'iataCode': 'LHR', 'terminal': '4', 'at': '2023-12-16T11:30:00'}, 'arrival': {'iataCode': 'CDG', 'terminal': '2E', 'at': '2023-12-16T13:50:00'}, 'carrierCode': 'AF', 'number': '1581', 'aircraft': {'code': '321'}, 'operating': {'carrierCode': 'AF'}, 'duration': 'PT1H20M', 'id': '3', 'numberOfStops': 0, 'blacklistedInEU': False}]}, {'duration': 'PT1H20M', 'segments': [{'departure': {'iataCode': 'CDG', 'terminal': '2E', 'at': '2024-01-19T18:00:00'}, 'arrival': {'iataCode': 'LHR', 'terminal': '4', 'at': '2024-01-19T18:20:00'}, 'carrierCode': 'AF', 'number': '1180', 'aircraft': {'code': '319'}, 'operating': {'carrierCode': 'AF'}, 'duration': 'PT1H20M', 'id': '10', 'numberOfStops': 0, 'blacklistedInEU': False}]}], 'price': {'currency': 'EUR', 'total': '246.27', 'base': '125.00', 'fees': [{'amount': '0.00', 'type': 'SUPPLIER'}, {'amount': '0.00', 'type': 'TICKETING'}], 'grandTotal': '246.27', 'additionalServices': [{'amount': '55.00', 'type': 'CHECKED_BAGS'}]}, 'pricingOptions': {'fareType': ['PUBLISHED'], 'includedCheckedBagsOnly': False}, 'validatingAirlineCodes': ['AF'], 'travelerPricings': [{'travelerId': '1', 'fareOption': 'STANDARD', 'travelerType': 'ADULT', 'price': {'currency': 'EUR', 'total': '246.27', 'base': '125.00'}, 'fareDetailsBySegment': [{'segmentId': '3', 'cabin': 'ECONOMY', 'fareBasis': 'TYL0ABLA', 'brandedFare': 'LIGHT', 'class': 'T', 'includedCheckedBags': {'quantity': 0}}, {'segmentId': '10', 'cabin': 'ECONOMY', 'fareBasis': 'TYL0ABLA', 'brandedFare': 'LIGHT', 'class': 'T', 'includedCheckedBags': {'quantity': 0}}]}]}]
-DEBUG:amadeus:Response data: [{'type': 'flight-offer', 'id': '1', 'source': 'GDS', 'instantTicketingRequired': False, 'nonHomogeneous': False, 'oneWay': False, 'lastTicketingDate': '2023-11-20', 'lastTicketingDateTime': '2023-11-20', 'numberOfBookableSeats': 9, 'itineraries': [{'duration': 'PT16H25M', 'segments': [{'departure': {'iataCode': 'LGW', 'terminal': 'S', 'at': '2023-12-16T17:40:00'}, 'arrival': {'iataCode': 'OSL', 'at': '2023-12-16T20:50:00'}, 'carrierCode': 'DY', 'number': '1309', 'aircraft': {'code': '73H'}, 'operating': {'carrierCode': 'DY'}, 'duration': 'PT2H10M', 'id': '4', 'numberOfStops': 0, 'blacklistedInEU': False}, {'departure': {'iataCode': 'OSL', 'at': '2023-12-17T08:40:00'}, 'arrival': {'iataCode': 'CDG', 'terminal': '2B', 'at': '2023-12-17T11:05:00'}, 'carrierCode': 'DY', 'number': '1494', 'aircraft': {'code': '73H'}, 'operating': {'carrierCode': 'DY'}, 'duration': 'PT2H25M', 'id': '5', 'numberOfStops': 0, 'blacklistedInEU': False}]}, {'duration': 'PT6H15M', 'segments': [{'departure': {'iataCode': 'CDG', 'terminal': '2B', 'at': '2024-01-19T11:45:00'}, 'arrival': {'iataCode': 'OSL', 'at': '2024-01-19T14:05:00'}, 'carrierCode': 'DY', 'number': '1495', 'aircraft': {'code': '73H'}, 'operating': {'carrierCode': 'DY'}, 'duration': 'PT2H20M', 'id': '8', 'numberOfStops': 0, 'blacklistedInEU': False}, {'departure': {'iataCode': 'OSL', 'at': '2024-01-19T15:30:00'}, 'arrival': {'iataCode': 'LGW', 'terminal': 'S', 'at': '2024-01-19T17:00:00'}, 'carrierCode': 'DY', 'number': '1308', 'aircraft': {'code': '73H'}, 'operating': {'carrierCode': 'DY'}, 'duration': 'PT2H30M', 'id': '9', 'numberOfStops': 0, 'blacklistedInEU': False}]}], 'price': {'currency': 'EUR', 'total': '137.39', 'base': '62.00', 'fees': [{'amount': '0.00', 'type': 'SUPPLIER'}, {'amount': '0.00', 'type': 'TICKETING'}], 'grandTotal': '137.39', 'additionalServices': [{'amount': '80.00', 'type': 'CHECKED_BAGS'}]}, 'pricingOptions': {'fareType': ['PUBLISHED'], 'includedCheckedBagsOnly': False}, 'validatingAirlineCodes': ['DY'], 'travelerPricings': [{'travelerId': '1', 'fareOption': 'STANDARD', 'travelerType': 'ADULT', 'price': {'currency': 'EUR', 'total': '137.39', 'base': '62.00'}, 'fareDetailsBySegment': [{'segmentId': '4', 'cabin': 'ECONOMY', 'fareBasis': 'QLCALF', 'brandedFare': 'LOWFARE', 'class': 'Q', 'includedCheckedBags': {'quantity': 0}}, {'segmentId': '5', 'cabin': 'ECONOMY', 'fareBasis': 'QCALF', 'brandedFare': 'LOWFARE', 'class': 'Q', 'includedCheckedBags': {'quantity': 0}}, {'segmentId': '8', 'cabin': 'ECONOMY', 'fareBasis': 'QCALF', 'brandedFare': 'LOWFARE', 'class': 'Q', 'includedCheckedBags': {'quantity': 0}}, {'segmentId': '9', 'cabin': 'ECONOMY', 'fareBasis': 'QLCALF', 'brandedFare': 'LOWFARE', 'class': 'Q', 'includedCheckedBags': {'quantity': 0}}]}]}, {'type': 'flight-offer', 'id': '2', 'source': 'GDS', 'instantTicketingRequired': False, 'nonHomogeneous': False, 'oneWay': False, 'lastTicketingDate': '2023-11-20', 'lastTicketingDateTime': '2023-11-20', 'numberOfBookableSeats': 9, 'itineraries': [{'duration': 'PT16H25M', 'segments': [{'departure': {'iataCode': 'LGW', 'terminal': 'S', 'at': '2023-12-16T17:40:00'}, 'arrival': {'iataCode': 'OSL', 'at': '2023-12-16T20:50:00'}, 'carrierCode': 'DY', 'number': '1309', 'aircraft': {'code': '73H'}, 'operating': {'carrierCode': 'DY'}, 'duration': 'PT2H10M', 'id': '4', 'numberOfStops': 0, 'blacklistedInEU': False}, {'departure': {'iataCode': 'OSL', 'at': '2023-12-17T08:40:00'}, 'arrival': {'iataCode': 'CDG', 'terminal': '2B', 'at': '2023-12-17T11:05:00'}, 'carrierCode': 'DY', 'number': '1494', 'aircraft': {'code': '73H'}, 'operating': {'carrierCode': 'DY'}, 'duration': 'PT2H25M', 'id': '5', 'numberOfStops': 0, 'blacklistedInEU': False}]}, {'duration': 'PT9H30M', 'segments': [{'departure': {'iataCode': 'CDG', 'terminal': '2B', 'at': '2024-01-19T11:45:00'}, 'arrival': {'iataCode': 'OSL', 'at': '2024-01-19T14:05:00'}, 'carrierCode': 'DY', 'number': '1495', 'aircraft': {'code': '73H'}, 'operating': {'carrierCode': 'DY'}, 'duration': 'PT2H20M', 'id': '11', 'numberOfStops': 0, 'blacklistedInEU': False}, {'departure': {'iataCode': 'OSL', 'at': '2024-01-19T18:45:00'}, 'arrival': {'iataCode': 'LGW', 'terminal': 'S', 'at': '2024-01-19T20:15:00'}, 'carrierCode': 'DY', 'number': '1310', 'aircraft': {'code': '73H'}, 'operating': {'carrierCode': 'DY'}, 'duration': 'PT2H30M', 'id': '12', 'numberOfStops': 0, 'blacklistedInEU': False}]}], 'price': {'currency': 'EUR', 'total': '137.39', 'base': '62.00', 'fees': [{'amount': '0.00', 'type': 'SUPPLIER'}, {'amount': '0.00', 'type': 'TICKETING'}], 'grandTotal': '137.39', 'additionalServices': [{'amount': '80.00', 'type': 'CHECKED_BAGS'}]}, 'pricingOptions': {'fareType': ['PUBLISHED'], 'includedCheckedBagsOnly': False}, 'validatingAirlineCodes': ['DY'], 'travelerPricings': [{'travelerId': '1', 'fareOption': 'STANDARD', 'travelerType': 'ADULT', 'price': {'currency': 'EUR', 'total': '137.39', 'base': '62.00'}, 'fareDetailsBySegment': [{'segmentId': '4', 'cabin': 'ECONOMY', 'fareBasis': 'QLCALF', 'brandedFare': 'LOWFARE', 'class': 'Q', 'includedCheckedBags': {'quantity': 0}}, {'segmentId': '5', 'cabin': 'ECONOMY', 'fareBasis': 'QCALF', 'brandedFare': 'LOWFARE', 'class': 'Q', 'includedCheckedBags': {'quantity': 0}}, {'segmentId': '11', 'cabin': 'ECONOMY', 'fareBasis': 'QCALF', 'brandedFare': 'LOWFARE', 'class': 'Q', 'includedCheckedBags': {'quantity': 0}}, {'segmentId': '12', 'cabin': 'ECONOMY', 'fareBasis': 'QLCALF', 'brandedFare': 'LOWFARE', 'class': 'Q', 'includedCheckedBags': {'quantity': 0}}]}]}, {'type': 'flight-offer', 'id': '3', 'source': 'GDS', 'instantTicketingRequired': False, 'nonHomogeneous': False, 'oneWay': False, 'lastTicketingDate': '2023-11-20', 'lastTicketingDateTime': '2023-11-20', 'numberOfBookableSeats': 9, 'itineraries': [{'duration': 'PT16H25M', 'segments': [{'departure': {'iataCode': 'LGW', 'terminal': 'S', 'at': '2023-12-16T17:40:00'}, 'arrival': {'iataCode': 'OSL', 'at': '2023-12-16T20:50:00'}, 'carrierCode': 'DY', 'number': '1309', 'aircraft': {'code': '73H'}, 'operating': {'carrierCode': 'DY'}, 'duration': 'PT2H10M', 'id': '4', 'numberOfStops': 0, 'blacklistedInEU': False}, {'departure': {'iataCode': 'OSL', 'at': '2023-12-17T08:40:00'}, 'arrival': {'iataCode': 'CDG', 'terminal': '2B', 'at': '2023-12-17T11:05:00'}, 'carrierCode': 'DY', 'number': '1494', 'aircraft': {'code': '73H'}, 'operating': {'carrierCode': 'DY'}, 'duration': 'PT2H25M', 'id': '5', 'numberOfStops': 0, 'blacklistedInEU': False}]}, {'duration': 'PT21H50M', 'segments': [{'departure': {'iataCode': 'CDG', 'terminal': '2B', 'at': '2024-01-19T11:45:00'}, 'arrival': {'iataCode': 'OSL', 'at': '2024-01-19T14:05:00'}, 'carrierCode': 'DY', 'number': '1495', 'aircraft': {'code': '73H'}, 'operating': {'carrierCode': 'DY'}, 'duration': 'PT2H20M', 'id': '13', 'numberOfStops': 0, 'blacklistedInEU': False}, {'departure': {'iataCode': 'OSL', 'at': '2024-01-20T07:00:00'}, 'arrival': {'iataCode': 'LGW', 'terminal': 'S', 'at': '2024-01-20T08:35:00'}, 'carrierCode': 'DY', 'number': '1302', 'aircraft': {'code': '73H'}, 'operating': {'carrierCode': 'DY'}, 'duration': 'PT2H35M', 'id': '14', 'numberOfStops': 0, 'blacklistedInEU': False}]}], 'price': {'currency': 'EUR', 'total': '150.39', 'base': '75.00', 'fees': [{'amount': '0.00', 'type': 'SUPPLIER'}, {'amount': '0.00', 'type': 'TICKETING'}], 'grandTotal': '150.39', 'additionalServices': [{'amount': '80.00', 'type': 'CHECKED_BAGS'}]}, 'pricingOptions': {'fareType': ['PUBLISHED'], 'includedCheckedBagsOnly': False}, 'validatingAirlineCodes': ['DY'], 'travelerPricings': [{'travelerId': '1', 'fareOption': 'STANDARD', 'travelerType': 'ADULT', 'price': {'currency': 'EUR', 'total': '150.39', 'base': '75.00'}, 'fareDetailsBySegment': [{'segmentId': '4', 'cabin': 'ECONOMY', 'fareBasis': 'QLCALF', 'brandedFare': 'LOWFARE', 'class': 'Q', 'includedCheckedBags': {'quantity': 0}}, {'segmentId': '5', 'cabin': 'ECONOMY', 'fareBasis': 'QCALF', 'brandedFare': 'LOWFARE', 'class': 'Q', 'includedCheckedBags': {'quantity': 0}}, {'segmentId': '13', 'cabin': 'ECONOMY', 'fareBasis': 'QCALF', 'brandedFare': 'LOWFARE', 'class': 'Q', 'includedCheckedBags': {'quantity': 0}}, {'segmentId': '14', 'cabin': 'ECONOMY', 'fareBasis': 'HLLF', 'brandedFare': 'LOWFARE', 'class': 'H', 'includedCheckedBags': {'quantity': 0}}]}]}, {'type': 'flight-offer', 'id': '4', 'source': 'GDS', 'instantTicketingRequired': False, 'nonHomogeneous': False, 'oneWay': False, 'lastTicketingDate': '2023-11-20', 'lastTicketingDateTime': '2023-11-20', 'numberOfBookableSeats': 7, 'itineraries': [{'duration': 'PT20H15M', 'segments': [{'departure': {'iataCode': 'LGW', 'terminal': 'S', 'at': '2023-12-16T11:55:00'}, 'arrival': {'iataCode': 'MLA', 'at': '2023-12-16T16:05:00'}, 'carrierCode': 'KM', 'number': '117', 'aircraft': {'code': '32N'}, 'operating': {'carrierCode': 'KM'}, 'duration': 'PT3H10M', 'id': '1', 'numberOfStops': 0, 'blacklistedInEU': False}, {'departure': {'iataCode': 'MLA', 'at': '2023-12-17T06:15:00'}, 'arrival': {'iataCode': 'CDG', 'terminal': '2D', 'at': '2023-12-17T09:10:00'}, 'carrierCode': 'KM', 'number': '478', 'aircraft': {'code': '32N'}, 'operating': {'carrierCode': 'KM'}, 'duration': 'PT2H55M', 'id': '2', 'numberOfStops': 0, 'blacklistedInEU': False}]}, {'duration': 'PT10H5M', 'segments': [{'departure': {'iataCode': 'CDG', 'terminal': '2D', 'at': '2024-01-19T10:20:00'}, 'arrival': {'iataCode': 'MLA', 'at': '2024-01-19T13:05:00'}, 'carrierCode': 'KM', 'number': '479', 'aircraft': {'code': '32N'}, 'operating': {'carrierCode': 'KM'}, 'duration': 'PT2H45M', 'id': '6', 'numberOfStops': 0, 'blacklistedInEU': False}, {'departure': {'iataCode': 'MLA', 'at': '2024-01-19T16:55:00'}, 'arrival': {'iataCode': 'LHR', 'terminal': '4', 'at': '2024-01-19T19:25:00'}, 'carrierCode': 'KM', 'number': '102', 'aircraft': {'code': '32N'}, 'operating': {'carrierCode': 'KM'}, 'duration': 'PT3H30M', 'id': '7', 'numberOfStops': 0, 'blacklistedInEU': False}]}], 'price': {'currency': 'EUR', 'total': '229.81', 'base': '104.00', 'fees': [{'amount': '0.00', 'type': 'SUPPLIER'}, {'amount': '0.00', 'type': 'TICKETING'}], 'grandTotal': '229.81', 'additionalServices': [{'amount': '160.00', 'type': 'CHECKED_BAGS'}]}, 'pricingOptions': {'fareType': ['PUBLISHED'], 'includedCheckedBagsOnly': False}, 'validatingAirlineCodes': ['KM'], 'travelerPricings': [{'travelerId': '1', 'fareOption': 'STANDARD', 'travelerType': 'ADULT', 'price': {'currency': 'EUR', 'total': '229.81', 'base': '104.00'}, 'fareDetailsBySegment': [{'segmentId': '1', 'cabin': 'ECONOMY', 'fareBasis': 'RLR0NBG0', 'brandedFare': 'GL', 'class': 'R', 'includedCheckedBags': {'quantity': 0}}, {'segmentId': '2', 'cabin': 'ECONOMY', 'fareBasis': 'RLR0NBG0', 'brandedFare': 'GL', 'class': 'R', 'includedCheckedBags': {'quantity': 0}}, {'segmentId': '6', 'cabin': 'ECONOMY', 'fareBasis': 'RLR0NBG0', 'brandedFare': 'GL', 'class': 'R', 'includedCheckedBags': {'quantity': 0}}, {'segmentId': '7', 'cabin': 'ECONOMY', 'fareBasis': 'RLR0NBG0', 'brandedFare': 'GL', 'class': 'R', 'includedCheckedBags': {'quantity': 0}}]}]}, {'type': 'flight-offer', 'id': '5', 'source': 'GDS', 'instantTicketingRequired': False, 'nonHomogeneous': False, 'oneWay': False, 'lastTicketingDate': '2023-12-16', 'lastTicketingDateTime': '2023-12-16', 'numberOfBookableSeats': 7, 'itineraries': [{'duration': 'PT1H20M', 'segments': [{'departure': {'iataCode': 'LHR', 'terminal': '4', 'at': '2023-12-16T11:30:00'}, 'arrival': {'iataCode': 'CDG', 'terminal': '2E', 'at': '2023-12-16T13:50:00'}, 'carrierCode': 'AF', 'number': '1581', 'aircraft': {'code': '321'}, 'operating': {'carrierCode': 'AF'}, 'duration': 'PT1H20M', 'id': '3', 'numberOfStops': 0, 'blacklistedInEU': False}]}, {'duration': 'PT1H20M', 'segments': [{'departure': {'iataCode': 'CDG', 'terminal': '2E', 'at': '2024-01-19T18:00:00'}, 'arrival': {'iataCode': 'LHR', 'terminal': '4', 'at': '2024-01-19T18:20:00'}, 'carrierCode': 'AF', 'number': '1180', 'aircraft': {'code': '319'}, 'operating': {'carrierCode': 'AF'}, 'duration': 'PT1H20M', 'id': '10', 'numberOfStops': 0, 'blacklistedInEU': False}]}], 'price': {'currency': 'EUR', 'total': '246.27', 'base': '125.00', 'fees': [{'amount': '0.00', 'type': 'SUPPLIER'}, {'amount': '0.00', 'type': 'TICKETING'}], 'grandTotal': '246.27', 'additionalServices': [{'amount': '55.00', 'type': 'CHECKED_BAGS'}]}, 'pricingOptions': {'fareType': ['PUBLISHED'], 'includedCheckedBagsOnly': False}, 'validatingAirlineCodes': ['AF'], 'travelerPricings': [{'travelerId': '1', 'fareOption': 'STANDARD', 'travelerType': 'ADULT', 'price': {'currency': 'EUR', 'total': '246.27', 'base': '125.00'}, 'fareDetailsBySegment': [{'segmentId': '3', 'cabin': 'ECONOMY', 'fareBasis': 'TYL0ABLA', 'brandedFare': 'LIGHT', 'class': 'T', 'includedCheckedBags': {'quantity': 0}}, {'segmentId': '10', 'cabin': 'ECONOMY', 'fareBasis': 'TYL0ABLA', 'brandedFare': 'LIGHT', 'class': 'T', 'includedCheckedBags': {'quantity': 0}}]}]}]
+Request parameters: {'originLocationCode': 'LON', 'destinationLocationCode': 'PAR', 'departureDate': '2023-12-16', 'adults': 1, 'returnDate': '2024-01-19', 'nonStop': 'false', 'currencyCode': 'USD', 'max': 5}
+DEBUG:amadeus:Request parameters: {'originLocationCode': 'LON', 'destinationLocationCode': 'PAR', 'departureDate': '2023-12-16', 'adults': 1, 'returnDate': '2024-01-19', 'nonStop': 'false', 'currencyCode': 'USD', 'max': 5}
+Response data: [{'type': 'flight-offer', 'id': '1', 'source': 'GDS', 'instantTicketingRequired': False, 'nonHomogeneous': False, 'oneWay': False, 'lastTicketingDate': '2023-11-20', 'lastTicketingDateTime': '2023-11-20', 'numberOfBookableSeats': 9, 'itineraries': [{'duration': 'PT16H25M', 'segments': [{'departure': {'iataCode': 'LGW', 'terminal': 'S', 'at': '2023-12-16T17:40:00'}, 'arrival': {'iataCode': 'OSL', 'at': '2023-12-16T20:50:00'}, 'carrierCode': 'DY', 'number': '1309', 'aircraft': {'code': '73H'}, 'operating': {'carrierCode': 'DY'}, 'duration': 'PT2H10M', 'id': '4', 'numberOfStops': 0, 'blacklistedInEU': False}, {'departure': {'iataCode': 'OSL', 'at': '2023-12-17T08:40:00'}, 'arrival': {'iataCode': 'CDG', 'terminal': '2B', 'at': '2023-12-17T11:05:00'}, 'carrierCode': 'DY', 'number': '1494', 'aircraft': {'code': '73H'}, 'operating': {'carrierCode': 'DY'}, 'duration': 'PT2H25M', 'id': '5', 'numberOfStops': 0, 'blacklistedInEU': False}]}, {'duration': 'PT6H15M', 'segments': [{'departure': {'iataCode': 'CDG', 'terminal': '2B', 'at': '2024-01-19T11:45:00'}, 'arrival': {'iataCode': 'OSL', 'at': '2024-01-19T14:05:00'}, 'carrierCode': 'DY', 'number': '1495', 'aircraft': {'code': '73H'}, 'operating': {'carrierCode': 'DY'}, 'duration': 'PT2H20M', 'id': '8', 'numberOfStops': 0, 'blacklistedInEU': False}, {'departure': {'iataCode': 'OSL', 'at': '2024-01-19T15:30:00'}, 'arrival': {'iataCode': 'LGW', 'terminal': 'S', 'at': '2024-01-19T17:00:00'}, 'carrierCode': 'DY', 'number': '1308', 'aircraft': {'code': '73H'}, 'operating': {'carrierCode': 'DY'}, 'duration': 'PT2H30M', 'id': '9', 'numberOfStops': 0, 'blacklistedInEU': False}]}], 'price': {'currency': 'USD', 'total': '146.60', 'base': '66.00', 'fees': [{'amount': '0.00', 'type': 'SUPPLIER'}, {'amount': '0.00', 'type': 'TICKETING'}], 'grandTotal': '146.60', 'additionalServices': [{'amount': '85.60', 'type': 'CHECKED_BAGS'}]}, 'pricingOptions': {'fareType': ['PUBLISHED'], 'includedCheckedBagsOnly': False}, 'validatingAirlineCodes': ['DY'], 'travelerPricings': [{'travelerId': '1', 'fareOption': 'STANDARD', 'travelerType': 'ADULT', 'price': {'currency': 'USD', 'total': '146.60', 'base': '66.00'}, 'fareDetailsBySegment': [{'segmentId': '4', 'cabin': 'ECONOMY', 'fareBasis': 'QLCALF', 'brandedFare': 'LOWFARE', 'class': 'Q', 'includedCheckedBags': {'quantity': 0}}, {'segmentId': '5', 'cabin': 'ECONOMY', 'fareBasis': 'QCALF', 'brandedFare': 'LOWFARE', 'class': 'Q', 'includedCheckedBags': {'quantity': 0}}, {'segmentId': '8', 'cabin': 'ECONOMY', 'fareBasis': 'QCALF', 'brandedFare': 'LOWFARE', 'class': 'Q', 'includedCheckedBags': {'quantity': 0}}, {'segmentId': '9', 'cabin': 'ECONOMY', 'fareBasis': 'QLCALF', 'brandedFare': 'LOWFARE', 'class': 'Q', 'includedCheckedBags': {'quantity': 0}}]}]}, {'type': 'flight-offer', 'id': '2', 'source': 'GDS', 'instantTicketingRequired': False, 'nonHomogeneous': False, 'oneWay': False, 'lastTicketingDate': '2023-11-20', 'lastTicketingDateTime': '2023-11-20', 'numberOfBookableSeats': 9, 'itineraries': [{'duration': 'PT16H25M', 'segments': [{'departure': {'iataCode': 'LGW', 'terminal': 'S', 'at': '2023-12-16T17:40:00'}, 'arrival': {'iataCode': 'OSL', 'at': '2023-12-16T20:50:00'}, 'carrierCode': 'DY', 'number': '1309', 'aircraft': {'code': '73H'}, 'operating': {'carrierCode': 'DY'}, 'duration': 'PT2H10M', 'id': '4', 'numberOfStops': 0, 'blacklistedInEU': False}, {'departure': {'iataCode': 'OSL', 'at': '2023-12-17T08:40:00'}, 'arrival': {'iataCode': 'CDG', 'terminal': '2B', 'at': '2023-12-17T11:05:00'}, 'carrierCode': 'DY', 'number': '1494', 'aircraft': {'code': '73H'}, 'operating': {'carrierCode': 'DY'}, 'duration': 'PT2H25M', 'id': '5', 'numberOfStops': 0, 'blacklistedInEU': False}]}, {'duration': 'PT9H30M', 'segments': [{'departure': {'iataCode': 'CDG', 'terminal': '2B', 'at': '2024-01-19T11:45:00'}, 'arrival': {'iataCode': 'OSL', 'at': '2024-01-19T14:05:00'}, 'carrierCode': 'DY', 'number': '1495', 'aircraft': {'code': '73H'}, 'operating': {'carrierCode': 'DY'}, 'duration': 'PT2H20M', 'id': '11', 'numberOfStops': 0, 'blacklistedInEU': False}, {'departure': {'iataCode': 'OSL', 'at': '2024-01-19T18:45:00'}, 'arrival': {'iataCode': 'LGW', 'terminal': 'S', 'at': '2024-01-19T20:15:00'}, 'carrierCode': 'DY', 'number': '1310', 'aircraft': {'code': '73H'}, 'operating': {'carrierCode': 'DY'}, 'duration': 'PT2H30M', 'id': '12', 'numberOfStops': 0, 'blacklistedInEU': False}]}], 'price': {'currency': 'USD', 'total': '146.60', 'base': '66.00', 'fees': [{'amount': '0.00', 'type': 'SUPPLIER'}, {'amount': '0.00', 'type': 'TICKETING'}], 'grandTotal': '146.60', 'additionalServices': [{'amount': '85.60', 'type': 'CHECKED_BAGS'}]}, 'pricingOptions': {'fareType': ['PUBLISHED'], 'includedCheckedBagsOnly': False}, 'validatingAirlineCodes': ['DY'], 'travelerPricings': [{'travelerId': '1', 'fareOption': 'STANDARD', 'travelerType': 'ADULT', 'price': {'currency': 'USD', 'total': '146.60', 'base': '66.00'}, 'fareDetailsBySegment': [{'segmentId': '4', 'cabin': 'ECONOMY', 'fareBasis': 'QLCALF', 'brandedFare': 'LOWFARE', 'class': 'Q', 'includedCheckedBags': {'quantity': 0}}, {'segmentId': '5', 'cabin': 'ECONOMY', 'fareBasis': 'QCALF', 'brandedFare': 'LOWFARE', 'class': 'Q', 'includedCheckedBags': {'quantity': 0}}, {'segmentId': '11', 'cabin': 'ECONOMY', 'fareBasis': 'QCALF', 'brandedFare': 'LOWFARE', 'class': 'Q', 'includedCheckedBags': {'quantity': 0}}, {'segmentId': '12', 'cabin': 'ECONOMY', 'fareBasis': 'QLCALF', 'brandedFare': 'LOWFARE', 'class': 'Q', 'includedCheckedBags': {'quantity': 0}}]}]}, {'type': 'flight-offer', 'id': '3', 'source': 'GDS', 'instantTicketingRequired': False, 'nonHomogeneous': False, 'oneWay': False, 'lastTicketingDate': '2023-11-20', 'lastTicketingDateTime': '2023-11-20', 'numberOfBookableSeats': 9, 'itineraries': [{'duration': 'PT16H25M', 'segments': [{'departure': {'iataCode': 'LGW', 'terminal': 'S', 'at': '2023-12-16T17:40:00'}, 'arrival': {'iataCode': 'OSL', 'at': '2023-12-16T20:50:00'}, 'carrierCode': 'DY', 'number': '1309', 'aircraft': {'code': '73H'}, 'operating': {'carrierCode': 'DY'}, 'duration': 'PT2H10M', 'id': '4', 'numberOfStops': 0, 'blacklistedInEU': False}, {'departure': {'iataCode': 'OSL', 'at': '2023-12-17T08:40:00'}, 'arrival': {'iataCode': 'CDG', 'terminal': '2B', 'at': '2023-12-17T11:05:00'}, 'carrierCode': 'DY', 'number': '1494', 'aircraft': {'code': '73H'}, 'operating': {'carrierCode': 'DY'}, 'duration': 'PT2H25M', 'id': '5', 'numberOfStops': 0, 'blacklistedInEU': False}]}, {'duration': 'PT21H50M', 'segments': [{'departure': {'iataCode': 'CDG', 'terminal': '2B', 'at': '2024-01-19T11:45:00'}, 'arrival': {'iataCode': 'OSL', 'at': '2024-01-19T14:05:00'}, 'carrierCode': 'DY', 'number': '1495', 'aircraft': {'code': '73H'}, 'operating': {'carrierCode': 'DY'}, 'duration': 'PT2H20M', 'id': '13', 'numberOfStops': 0, 'blacklistedInEU': False}, {'departure': {'iataCode': 'OSL', 'at': '2024-01-20T07:00:00'}, 'arrival': {'iataCode': 'LGW', 'terminal': 'S', 'at': '2024-01-20T08:35:00'}, 'carrierCode': 'DY', 'number': '1302', 'aircraft': {'code': '73H'}, 'operating': {'carrierCode': 'DY'}, 'duration': 'PT2H35M', 'id': '14', 'numberOfStops': 0, 'blacklistedInEU': False}]}], 'price': {'currency': 'USD', 'total': '160.60', 'base': '80.00', 'fees': [{'amount': '0.00', 'type': 'SUPPLIER'}, {'amount': '0.00', 'type': 'TICKETING'}], 'grandTotal': '160.60', 'additionalServices': [{'amount': '85.60', 'type': 'CHECKED_BAGS'}]}, 'pricingOptions': {'fareType': ['PUBLISHED'], 'includedCheckedBagsOnly': False}, 'validatingAirlineCodes': ['DY'], 'travelerPricings': [{'travelerId': '1', 'fareOption': 'STANDARD', 'travelerType': 'ADULT', 'price': {'currency': 'USD', 'total': '160.60', 'base': '80.00'}, 'fareDetailsBySegment': [{'segmentId': '4', 'cabin': 'ECONOMY', 'fareBasis': 'QLCALF', 'brandedFare': 'LOWFARE', 'class': 'Q', 'includedCheckedBags': {'quantity': 0}}, {'segmentId': '5', 'cabin': 'ECONOMY', 'fareBasis': 'QCALF', 'brandedFare': 'LOWFARE', 'class': 'Q', 'includedCheckedBags': {'quantity': 0}}, {'segmentId': '13', 'cabin': 'ECONOMY', 'fareBasis': 'QCALF', 'brandedFare': 'LOWFARE', 'class': 'Q', 'includedCheckedBags': {'quantity': 0}}, {'segmentId': '14', 'cabin': 'ECONOMY', 'fareBasis': 'HLLF', 'brandedFare': 'LOWFARE', 'class': 'H', 'includedCheckedBags': {'quantity': 0}}]}]}, {'type': 'flight-offer', 'id': '4', 'source': 'GDS', 'instantTicketingRequired': False, 'nonHomogeneous': False, 'oneWay': False, 'lastTicketingDate': '2023-11-20', 'lastTicketingDateTime': '2023-11-20', 'numberOfBookableSeats': 7, 'itineraries': [{'duration': 'PT20H15M', 'segments': [{'departure': {'iataCode': 'LGW', 'terminal': 'S', 'at': '2023-12-16T11:55:00'}, 'arrival': {'iataCode': 'MLA', 'at': '2023-12-16T16:05:00'}, 'carrierCode': 'KM', 'number': '117', 'aircraft': {'code': '32N'}, 'operating': {'carrierCode': 'KM'}, 'duration': 'PT3H10M', 'id': '1', 'numberOfStops': 0, 'blacklistedInEU': False}, {'departure': {'iataCode': 'MLA', 'at': '2023-12-17T06:15:00'}, 'arrival': {'iataCode': 'CDG', 'terminal': '2D', 'at': '2023-12-17T09:10:00'}, 'carrierCode': 'KM', 'number': '478', 'aircraft': {'code': '32N'}, 'operating': {'carrierCode': 'KM'}, 'duration': 'PT2H55M', 'id': '2', 'numberOfStops': 0, 'blacklistedInEU': False}]}, {'duration': 'PT10H5M', 'segments': [{'departure': {'iataCode': 'CDG', 'terminal': '2D', 'at': '2024-01-19T10:20:00'}, 'arrival': {'iataCode': 'MLA', 'at': '2024-01-19T13:05:00'}, 'carrierCode': 'KM', 'number': '479', 'aircraft': {'code': '32N'}, 'operating': {'carrierCode': 'KM'}, 'duration': 'PT2H45M', 'id': '6', 'numberOfStops': 0, 'blacklistedInEU': False}, {'departure': {'iataCode': 'MLA', 'at': '2024-01-19T16:55:00'}, 'arrival': {'iataCode': 'LHR', 'terminal': '4', 'at': '2024-01-19T19:25:00'}, 'carrierCode': 'KM', 'number': '102', 'aircraft': {'code': '32N'}, 'operating': {'carrierCode': 'KM'}, 'duration': 'PT3H30M', 'id': '7', 'numberOfStops': 0, 'blacklistedInEU': False}]}], 'price': {'currency': 'USD', 'total': '244.70', 'base': '110.00', 'fees': [{'amount': '0.00', 'type': 'SUPPLIER'}, {'amount': '0.00', 'type': 'TICKETING'}], 'grandTotal': '244.70', 'additionalServices': [{'amount': '171.20', 'type': 'CHECKED_BAGS'}]}, 'pricingOptions': {'fareType': ['PUBLISHED'], 'includedCheckedBagsOnly': False}, 'validatingAirlineCodes': ['KM'], 'travelerPricings': [{'travelerId': '1', 'fareOption': 'STANDARD', 'travelerType': 'ADULT', 'price': {'currency': 'USD', 'total': '244.70', 'base': '110.00'}, 'fareDetailsBySegment': [{'segmentId': '1', 'cabin': 'ECONOMY', 'fareBasis': 'RLR0NBG0', 'brandedFare': 'GL', 'class': 'R', 'includedCheckedBags': {'quantity': 0}}, {'segmentId': '2', 'cabin': 'ECONOMY', 'fareBasis': 'RLR0NBG0', 'brandedFare': 'GL', 'class': 'R', 'includedCheckedBags': {'quantity': 0}}, {'segmentId': '6', 'cabin': 'ECONOMY', 'fareBasis': 'RLR0NBG0', 'brandedFare': 'GL', 'class': 'R', 'includedCheckedBags': {'quantity': 0}}, {'segmentId': '7', 'cabin': 'ECONOMY', 'fareBasis': 'RLR0NBG0', 'brandedFare': 'GL', 'class': 'R', 'includedCheckedBags': {'quantity': 0}}]}]}, {'type': 'flight-offer', 'id': '5', 'source': 'GDS', 'instantTicketingRequired': False, 'nonHomogeneous': False, 'oneWay': False, 'lastTicketingDate': '2023-12-16', 'lastTicketingDateTime': '2023-12-16', 'numberOfBookableSeats': 9, 'itineraries': [{'duration': 'PT1H20M', 'segments': [{'departure': {'iataCode': 'LHR', 'terminal': '4', 'at': '2023-12-16T11:30:00'}, 'arrival': {'iataCode': 'CDG', 'terminal': '2E', 'at': '2023-12-16T13:50:00'}, 'carrierCode': 'AF', 'number': '1581', 'aircraft': {'code': '321'}, 'operating': {'carrierCode': 'AF'}, 'duration': 'PT1H20M', 'id': '3', 'numberOfStops': 0, 'blacklistedInEU': False}]}, {'duration': 'PT1H20M', 'segments': [{'departure': {'iataCode': 'CDG', 'terminal': '2E', 'at': '2024-01-19T18:00:00'}, 'arrival': {'iataCode': 'LHR', 'terminal': '4', 'at': '2024-01-19T18:20:00'}, 'carrierCode': 'AF', 'number': '1180', 'aircraft': {'code': '319'}, 'operating': {'carrierCode': 'AF'}, 'duration': 'PT1H20M', 'id': '10', 'numberOfStops': 0, 'blacklistedInEU': False}]}], 'price': {'currency': 'USD', 'total': '263.70', 'base': '134.00', 'fees': [{'amount': '0.00', 'type': 'SUPPLIER'}, {'amount': '0.00', 'type': 'TICKETING'}], 'grandTotal': '263.70', 'additionalServices': [{'amount': '58.80', 'type': 'CHECKED_BAGS'}]}, 'pricingOptions': {'fareType': ['PUBLISHED'], 'includedCheckedBagsOnly': False}, 'validatingAirlineCodes': ['AF'], 'travelerPricings': [{'travelerId': '1', 'fareOption': 'STANDARD', 'travelerType': 'ADULT', 'price': {'currency': 'USD', 'total': '263.70', 'base': '134.00'}, 'fareDetailsBySegment': [{'segmentId': '3', 'cabin': 'ECONOMY', 'fareBasis': 'TYL0ABLA', 'brandedFare': 'LIGHT', 'class': 'T', 'includedCheckedBags': {'quantity': 0}}, {'segmentId': '10', 'cabin': 'ECONOMY', 'fareBasis': 'TYL0ABLA', 'brandedFare': 'LIGHT', 'class': 'T', 'includedCheckedBags': {'quantity': 0}}]}]}]
+DEBUG:amadeus:Response data: [{'type': 'flight-offer', 'id': '1', 'source': 'GDS', 'instantTicketingRequired': False, 'nonHomogeneous': False, 'oneWay': False, 'lastTicketingDate': '2023-11-20', 'lastTicketingDateTime': '2023-11-20', 'numberOfBookableSeats': 9, 'itineraries': [{'duration': 'PT16H25M', 'segments': [{'departure': {'iataCode': 'LGW', 'terminal': 'S', 'at': '2023-12-16T17:40:00'}, 'arrival': {'iataCode': 'OSL', 'at': '2023-12-16T20:50:00'}, 'carrierCode': 'DY', 'number': '1309', 'aircraft': {'code': '73H'}, 'operating': {'carrierCode': 'DY'}, 'duration': 'PT2H10M', 'id': '4', 'numberOfStops': 0, 'blacklistedInEU': False}, {'departure': {'iataCode': 'OSL', 'at': '2023-12-17T08:40:00'}, 'arrival': {'iataCode': 'CDG', 'terminal': '2B', 'at': '2023-12-17T11:05:00'}, 'carrierCode': 'DY', 'number': '1494', 'aircraft': {'code': '73H'}, 'operating': {'carrierCode': 'DY'}, 'duration': 'PT2H25M', 'id': '5', 'numberOfStops': 0, 'blacklistedInEU': False}]}, {'duration': 'PT6H15M', 'segments': [{'departure': {'iataCode': 'CDG', 'terminal': '2B', 'at': '2024-01-19T11:45:00'}, 'arrival': {'iataCode': 'OSL', 'at': '2024-01-19T14:05:00'}, 'carrierCode': 'DY', 'number': '1495', 'aircraft': {'code': '73H'}, 'operating': {'carrierCode': 'DY'}, 'duration': 'PT2H20M', 'id': '8', 'numberOfStops': 0, 'blacklistedInEU': False}, {'departure': {'iataCode': 'OSL', 'at': '2024-01-19T15:30:00'}, 'arrival': {'iataCode': 'LGW', 'terminal': 'S', 'at': '2024-01-19T17:00:00'}, 'carrierCode': 'DY', 'number': '1308', 'aircraft': {'code': '73H'}, 'operating': {'carrierCode': 'DY'}, 'duration': 'PT2H30M', 'id': '9', 'numberOfStops': 0, 'blacklistedInEU': False}]}], 'price': {'currency': 'USD', 'total': '146.60', 'base': '66.00', 'fees': [{'amount': '0.00', 'type': 'SUPPLIER'}, {'amount': '0.00', 'type': 'TICKETING'}], 'grandTotal': '146.60', 'additionalServices': [{'amount': '85.60', 'type': 'CHECKED_BAGS'}]}, 'pricingOptions': {'fareType': ['PUBLISHED'], 'includedCheckedBagsOnly': False}, 'validatingAirlineCodes': ['DY'], 'travelerPricings': [{'travelerId': '1', 'fareOption': 'STANDARD', 'travelerType': 'ADULT', 'price': {'currency': 'USD', 'total': '146.60', 'base': '66.00'}, 'fareDetailsBySegment': [{'segmentId': '4', 'cabin': 'ECONOMY', 'fareBasis': 'QLCALF', 'brandedFare': 'LOWFARE', 'class': 'Q', 'includedCheckedBags': {'quantity': 0}}, {'segmentId': '5', 'cabin': 'ECONOMY', 'fareBasis': 'QCALF', 'brandedFare': 'LOWFARE', 'class': 'Q', 'includedCheckedBags': {'quantity': 0}}, {'segmentId': '8', 'cabin': 'ECONOMY', 'fareBasis': 'QCALF', 'brandedFare': 'LOWFARE', 'class': 'Q', 'includedCheckedBags': {'quantity': 0}}, {'segmentId': '9', 'cabin': 'ECONOMY', 'fareBasis': 'QLCALF', 'brandedFare': 'LOWFARE', 'class': 'Q', 'includedCheckedBags': {'quantity': 0}}]}]}, {'type': 'flight-offer', 'id': '2', 'source': 'GDS', 'instantTicketingRequired': False, 'nonHomogeneous': False, 'oneWay': False, 'lastTicketingDate': '2023-11-20', 'lastTicketingDateTime': '2023-11-20', 'numberOfBookableSeats': 9, 'itineraries': [{'duration': 'PT16H25M', 'segments': [{'departure': {'iataCode': 'LGW', 'terminal': 'S', 'at': '2023-12-16T17:40:00'}, 'arrival': {'iataCode': 'OSL', 'at': '2023-12-16T20:50:00'}, 'carrierCode': 'DY', 'number': '1309', 'aircraft': {'code': '73H'}, 'operating': {'carrierCode': 'DY'}, 'duration': 'PT2H10M', 'id': '4', 'numberOfStops': 0, 'blacklistedInEU': False}, {'departure': {'iataCode': 'OSL', 'at': '2023-12-17T08:40:00'}, 'arrival': {'iataCode': 'CDG', 'terminal': '2B', 'at': '2023-12-17T11:05:00'}, 'carrierCode': 'DY', 'number': '1494', 'aircraft': {'code': '73H'}, 'operating': {'carrierCode': 'DY'}, 'duration': 'PT2H25M', 'id': '5', 'numberOfStops': 0, 'blacklistedInEU': False}]}, {'duration': 'PT9H30M', 'segments': [{'departure': {'iataCode': 'CDG', 'terminal': '2B', 'at': '2024-01-19T11:45:00'}, 'arrival': {'iataCode': 'OSL', 'at': '2024-01-19T14:05:00'}, 'carrierCode': 'DY', 'number': '1495', 'aircraft': {'code': '73H'}, 'operating': {'carrierCode': 'DY'}, 'duration': 'PT2H20M', 'id': '11', 'numberOfStops': 0, 'blacklistedInEU': False}, {'departure': {'iataCode': 'OSL', 'at': '2024-01-19T18:45:00'}, 'arrival': {'iataCode': 'LGW', 'terminal': 'S', 'at': '2024-01-19T20:15:00'}, 'carrierCode': 'DY', 'number': '1310', 'aircraft': {'code': '73H'}, 'operating': {'carrierCode': 'DY'}, 'duration': 'PT2H30M', 'id': '12', 'numberOfStops': 0, 'blacklistedInEU': False}]}], 'price': {'currency': 'USD', 'total': '146.60', 'base': '66.00', 'fees': [{'amount': '0.00', 'type': 'SUPPLIER'}, {'amount': '0.00', 'type': 'TICKETING'}], 'grandTotal': '146.60', 'additionalServices': [{'amount': '85.60', 'type': 'CHECKED_BAGS'}]}, 'pricingOptions': {'fareType': ['PUBLISHED'], 'includedCheckedBagsOnly': False}, 'validatingAirlineCodes': ['DY'], 'travelerPricings': [{'travelerId': '1', 'fareOption': 'STANDARD', 'travelerType': 'ADULT', 'price': {'currency': 'USD', 'total': '146.60', 'base': '66.00'}, 'fareDetailsBySegment': [{'segmentId': '4', 'cabin': 'ECONOMY', 'fareBasis': 'QLCALF', 'brandedFare': 'LOWFARE', 'class': 'Q', 'includedCheckedBags': {'quantity': 0}}, {'segmentId': '5', 'cabin': 'ECONOMY', 'fareBasis': 'QCALF', 'brandedFare': 'LOWFARE', 'class': 'Q', 'includedCheckedBags': {'quantity': 0}}, {'segmentId': '11', 'cabin': 'ECONOMY', 'fareBasis': 'QCALF', 'brandedFare': 'LOWFARE', 'class': 'Q', 'includedCheckedBags': {'quantity': 0}}, {'segmentId': '12', 'cabin': 'ECONOMY', 'fareBasis': 'QLCALF', 'brandedFare': 'LOWFARE', 'class': 'Q', 'includedCheckedBags': {'quantity': 0}}]}]}, {'type': 'flight-offer', 'id': '3', 'source': 'GDS', 'instantTicketingRequired': False, 'nonHomogeneous': False, 'oneWay': False, 'lastTicketingDate': '2023-11-20', 'lastTicketingDateTime': '2023-11-20', 'numberOfBookableSeats': 9, 'itineraries': [{'duration': 'PT16H25M', 'segments': [{'departure': {'iataCode': 'LGW', 'terminal': 'S', 'at': '2023-12-16T17:40:00'}, 'arrival': {'iataCode': 'OSL', 'at': '2023-12-16T20:50:00'}, 'carrierCode': 'DY', 'number': '1309', 'aircraft': {'code': '73H'}, 'operating': {'carrierCode': 'DY'}, 'duration': 'PT2H10M', 'id': '4', 'numberOfStops': 0, 'blacklistedInEU': False}, {'departure': {'iataCode': 'OSL', 'at': '2023-12-17T08:40:00'}, 'arrival': {'iataCode': 'CDG', 'terminal': '2B', 'at': '2023-12-17T11:05:00'}, 'carrierCode': 'DY', 'number': '1494', 'aircraft': {'code': '73H'}, 'operating': {'carrierCode': 'DY'}, 'duration': 'PT2H25M', 'id': '5', 'numberOfStops': 0, 'blacklistedInEU': False}]}, {'duration': 'PT21H50M', 'segments': [{'departure': {'iataCode': 'CDG', 'terminal': '2B', 'at': '2024-01-19T11:45:00'}, 'arrival': {'iataCode': 'OSL', 'at': '2024-01-19T14:05:00'}, 'carrierCode': 'DY', 'number': '1495', 'aircraft': {'code': '73H'}, 'operating': {'carrierCode': 'DY'}, 'duration': 'PT2H20M', 'id': '13', 'numberOfStops': 0, 'blacklistedInEU': False}, {'departure': {'iataCode': 'OSL', 'at': '2024-01-20T07:00:00'}, 'arrival': {'iataCode': 'LGW', 'terminal': 'S', 'at': '2024-01-20T08:35:00'}, 'carrierCode': 'DY', 'number': '1302', 'aircraft': {'code': '73H'}, 'operating': {'carrierCode': 'DY'}, 'duration': 'PT2H35M', 'id': '14', 'numberOfStops': 0, 'blacklistedInEU': False}]}], 'price': {'currency': 'USD', 'total': '160.60', 'base': '80.00', 'fees': [{'amount': '0.00', 'type': 'SUPPLIER'}, {'amount': '0.00', 'type': 'TICKETING'}], 'grandTotal': '160.60', 'additionalServices': [{'amount': '85.60', 'type': 'CHECKED_BAGS'}]}, 'pricingOptions': {'fareType': ['PUBLISHED'], 'includedCheckedBagsOnly': False}, 'validatingAirlineCodes': ['DY'], 'travelerPricings': [{'travelerId': '1', 'fareOption': 'STANDARD', 'travelerType': 'ADULT', 'price': {'currency': 'USD', 'total': '160.60', 'base': '80.00'}, 'fareDetailsBySegment': [{'segmentId': '4', 'cabin': 'ECONOMY', 'fareBasis': 'QLCALF', 'brandedFare': 'LOWFARE', 'class': 'Q', 'includedCheckedBags': {'quantity': 0}}, {'segmentId': '5', 'cabin': 'ECONOMY', 'fareBasis': 'QCALF', 'brandedFare': 'LOWFARE', 'class': 'Q', 'includedCheckedBags': {'quantity': 0}}, {'segmentId': '13', 'cabin': 'ECONOMY', 'fareBasis': 'QCALF', 'brandedFare': 'LOWFARE', 'class': 'Q', 'includedCheckedBags': {'quantity': 0}}, {'segmentId': '14', 'cabin': 'ECONOMY', 'fareBasis': 'HLLF', 'brandedFare': 'LOWFARE', 'class': 'H', 'includedCheckedBags': {'quantity': 0}}]}]}, {'type': 'flight-offer', 'id': '4', 'source': 'GDS', 'instantTicketingRequired': False, 'nonHomogeneous': False, 'oneWay': False, 'lastTicketingDate': '2023-11-20', 'lastTicketingDateTime': '2023-11-20', 'numberOfBookableSeats': 7, 'itineraries': [{'duration': 'PT20H15M', 'segments': [{'departure': {'iataCode': 'LGW', 'terminal': 'S', 'at': '2023-12-16T11:55:00'}, 'arrival': {'iataCode': 'MLA', 'at': '2023-12-16T16:05:00'}, 'carrierCode': 'KM', 'number': '117', 'aircraft': {'code': '32N'}, 'operating': {'carrierCode': 'KM'}, 'duration': 'PT3H10M', 'id': '1', 'numberOfStops': 0, 'blacklistedInEU': False}, {'departure': {'iataCode': 'MLA', 'at': '2023-12-17T06:15:00'}, 'arrival': {'iataCode': 'CDG', 'terminal': '2D', 'at': '2023-12-17T09:10:00'}, 'carrierCode': 'KM', 'number': '478', 'aircraft': {'code': '32N'}, 'operating': {'carrierCode': 'KM'}, 'duration': 'PT2H55M', 'id': '2', 'numberOfStops': 0, 'blacklistedInEU': False}]}, {'duration': 'PT10H5M', 'segments': [{'departure': {'iataCode': 'CDG', 'terminal': '2D', 'at': '2024-01-19T10:20:00'}, 'arrival': {'iataCode': 'MLA', 'at': '2024-01-19T13:05:00'}, 'carrierCode': 'KM', 'number': '479', 'aircraft': {'code': '32N'}, 'operating': {'carrierCode': 'KM'}, 'duration': 'PT2H45M', 'id': '6', 'numberOfStops': 0, 'blacklistedInEU': False}, {'departure': {'iataCode': 'MLA', 'at': '2024-01-19T16:55:00'}, 'arrival': {'iataCode': 'LHR', 'terminal': '4', 'at': '2024-01-19T19:25:00'}, 'carrierCode': 'KM', 'number': '102', 'aircraft': {'code': '32N'}, 'operating': {'carrierCode': 'KM'}, 'duration': 'PT3H30M', 'id': '7', 'numberOfStops': 0, 'blacklistedInEU': False}]}], 'price': {'currency': 'USD', 'total': '244.70', 'base': '110.00', 'fees': [{'amount': '0.00', 'type': 'SUPPLIER'}, {'amount': '0.00', 'type': 'TICKETING'}], 'grandTotal': '244.70', 'additionalServices': [{'amount': '171.20', 'type': 'CHECKED_BAGS'}]}, 'pricingOptions': {'fareType': ['PUBLISHED'], 'includedCheckedBagsOnly': False}, 'validatingAirlineCodes': ['KM'], 'travelerPricings': [{'travelerId': '1', 'fareOption': 'STANDARD', 'travelerType': 'ADULT', 'price': {'currency': 'USD', 'total': '244.70', 'base': '110.00'}, 'fareDetailsBySegment': [{'segmentId': '1', 'cabin': 'ECONOMY', 'fareBasis': 'RLR0NBG0', 'brandedFare': 'GL', 'class': 'R', 'includedCheckedBags': {'quantity': 0}}, {'segmentId': '2', 'cabin': 'ECONOMY', 'fareBasis': 'RLR0NBG0', 'brandedFare': 'GL', 'class': 'R', 'includedCheckedBags': {'quantity': 0}}, {'segmentId': '6', 'cabin': 'ECONOMY', 'fareBasis': 'RLR0NBG0', 'brandedFare': 'GL', 'class': 'R', 'includedCheckedBags': {'quantity': 0}}, {'segmentId': '7', 'cabin': 'ECONOMY', 'fareBasis': 'RLR0NBG0', 'brandedFare': 'GL', 'class': 'R', 'includedCheckedBags': {'quantity': 0}}]}]}, {'type': 'flight-offer', 'id': '5', 'source': 'GDS', 'instantTicketingRequired': False, 'nonHomogeneous': False, 'oneWay': False, 'lastTicketingDate': '2023-12-16', 'lastTicketingDateTime': '2023-12-16', 'numberOfBookableSeats': 9, 'itineraries': [{'duration': 'PT1H20M', 'segments': [{'departure': {'iataCode': 'LHR', 'terminal': '4', 'at': '2023-12-16T11:30:00'}, 'arrival': {'iataCode': 'CDG', 'terminal': '2E', 'at': '2023-12-16T13:50:00'}, 'carrierCode': 'AF', 'number': '1581', 'aircraft': {'code': '321'}, 'operating': {'carrierCode': 'AF'}, 'duration': 'PT1H20M', 'id': '3', 'numberOfStops': 0, 'blacklistedInEU': False}]}, {'duration': 'PT1H20M', 'segments': [{'departure': {'iataCode': 'CDG', 'terminal': '2E', 'at': '2024-01-19T18:00:00'}, 'arrival': {'iataCode': 'LHR', 'terminal': '4', 'at': '2024-01-19T18:20:00'}, 'carrierCode': 'AF', 'number': '1180', 'aircraft': {'code': '319'}, 'operating': {'carrierCode': 'AF'}, 'duration': 'PT1H20M', 'id': '10', 'numberOfStops': 0, 'blacklistedInEU': False}]}], 'price': {'currency': 'USD', 'total': '263.70', 'base': '134.00', 'fees': [{'amount': '0.00', 'type': 'SUPPLIER'}, {'amount': '0.00', 'type': 'TICKETING'}], 'grandTotal': '263.70', 'additionalServices': [{'amount': '58.80', 'type': 'CHECKED_BAGS'}]}, 'pricingOptions': {'fareType': ['PUBLISHED'], 'includedCheckedBagsOnly': False}, 'validatingAirlineCodes': ['AF'], 'travelerPricings': [{'travelerId': '1', 'fareOption': 'STANDARD', 'travelerType': 'ADULT', 'price': {'currency': 'USD', 'total': '263.70', 'base': '134.00'}, 'fareDetailsBySegment': [{'segmentId': '3', 'cabin': 'ECONOMY', 'fareBasis': 'TYL0ABLA', 'brandedFare': 'LIGHT', 'class': 'T', 'includedCheckedBags': {'quantity': 0}}, {'segmentId': '10', 'cabin': 'ECONOMY', 'fareBasis': 'TYL0ABLA', 'brandedFare': 'LIGHT', 'class': 'T', 'includedCheckedBags': {'quantity': 0}}]}]}]
 Requesting flight data from amadues server: originLocationCode: LON, 
           destinationLocationCode:PAR, departureDate:2023-12-16,
           returnDate:2024-01-19, adults:1, children:None, infants: None, 
           travelClass: None, includedAirlineCodes: None, excludedAirlineCodes:None,
-          nonStop: false, currencyCode: None, maxPrice: None
+          nonStop: false, currencyCode: USD, maxPrice: None
            
 user_proxy (to chat_manager):
 
 ***** Response from calling function "get_flight_data" *****
 Finished loading flight data to remote server /n
     The airport IATA codes: 
-    query results [('CDG', 'LHR'), ('MLA', 'LHR'), ('MLA', 'CDG'), ('LGW', 'MLA'), ('CDG', 'MLA'), ('OSL', 'CDG'), ('LHR', 'CDG'), ('OSL', 'LGW'), ('LGW', 'OSL'), ('CDG', 'OSL')]
+    query results [('CDG', 'LHR'), ('MLA', 'LHR'), ('MLA', 'CDG'), ('LGW', 'MLA'), ('OSL', 'CDG'), ('CDG', 'MLA'), ('OSL', 'LGW'), ('LHR', 'CDG'), ('LGW', 'OSL'), ('CDG', 'OSL')]
 ************************************************************
 
 --------------------------------------------------------------------------------
 analyst (to chat_manager):
 
+To find the cheapest flights from London (LON) to Paris (PAR) leaving on the 16th of December 2023 and returning on the 19th of January 2024, I will write a PostgreSQL query to search the database.
+
+The query will:
+1. Find all outbound itineraries from London to Paris on the 16th of December 2023.
+2. Find all return itineraries from Paris to London on the 19th of January 2024.
+3. Sum the total price of the outbound and return flights.
+4. Order the results by the sum of the total prices in ascending order to find the cheapest flight options.
+
+Here's the SQL query that you can run to retrieve the necessary information:
+
+```sql
+WITH Outbound AS (
+    SELECT
+        fo.FlightOfferID,
+        SUM(fo.TotalPrice) AS OutboundTotalPrice,
+        STRING_AGG(s.DepartureIATACode || '-' || s.ArrivalIATACode, ', ') AS OutboundRoute,
+        MIN(s.DepartureTime) AS OutboundDepartureTime,
+        MAX(s.ArrivalTime) AS OutboundArrivalTime
+    FROM
+        FlightOffer fo
+    INNER JOIN Itinerary i ON fo.FlightOfferID = i.FlightOfferID
+    INNER JOIN Segment s ON i.ItineraryID = s.ItineraryID
+    WHERE
+        s.DepartureIATACode IN ('LHR', 'LGW', 'STN', 'LCY') AND
+        s.ArrivalIATACode IN ('CDG', 'ORY', 'BVA', 'LBG', 'XCR') AND
+        DATE(s.DepartureTime) = '2023-12-16'
+    GROUP BY
+        fo.FlightOfferID
+),
+Return AS (
+    SELECT
+        fo.FlightOfferID,
+        SUM(fo.TotalPrice) AS ReturnTotalPrice,
+        STRING_AGG(s.DepartureIATACode || '-' || s.ArrivalIATACode, ', ') AS ReturnRoute,
+        MIN(s.DepartureTime) AS ReturnDepartureTime,
+        MAX(s.ArrivalTime) AS ReturnArrivalTime
+    FROM
+        FlightOffer fo
+    INNER JOIN Itinerary i ON fo.FlightOfferID = i.FlightOfferID
+    INNER JOIN Segment s ON i.ItineraryID = s.ItineraryID
+    WHERE
+        s.DepartureIATACode IN ('CDG', 'ORY', 'BVA', 'LBG', 'XCR') AND
+        s.ArrivalIATACode IN ('LHR', 'LGW', 'STN', 'LCY') AND
+        DATE(s.DepartureTime) = '2024-01-19'
+    GROUP BY
+        fo.FlightOfferID
+)
+SELECT
+    o.FlightOfferID AS OutboundFlightOfferID,
+    o.OutboundTotalPrice,
+    o.OutboundRoute,
+    o.OutboundDepartureTime,
+    o.OutboundArrivalTime,
+    r.FlightOfferID AS ReturnFlightOfferID,
+    r.ReturnTotalPrice,
+    r.ReturnRoute,
+    r.ReturnDepartureTime,
+    r.ReturnArrivalTime,
+    (o.OutboundTotalPrice + r.ReturnTotalPrice) AS TotalPrice
+FROM
+    Outbound o
+CROSS JOIN Return r
+ORDER BY
+    TotalPrice ASC
+LIMIT 1;
+```
+
+Make sure to execute the above query to get the cheapest flights from London to Paris for the specified dates.
+
+--------------------------------------------------------------------------------
+user_proxy (to chat_manager):
+
 ***** Suggested function Call: run_sql *****
 Arguments: 
-{"sql_query":"WITH OutboundItinerary AS (\n    SELECT fo.FlightOfferID, fo.TotalPrice, it.Duration\n    FROM FlightOffer fo\n    INNER JOIN Itinerary it ON fo.FlightOfferID = it.FlightOfferID\n    INNER JOIN Segment s ON it.ItineraryID = s.ItineraryID\n    WHERE s.DepartureIATACode IN ('LHR', 'LGW') AND s.ArrivalIATACode = 'CDG'\n      AND DATE(s.DepartureTime) = '2023-12-16'\n),\nReturnItinerary AS (\n    SELECT fo.FlightOfferID, fo.TotalPrice, it.Duration\n    FROM FlightOffer fo\n    INNER JOIN Itinerary it ON fo.FlightOfferID = it.FlightOfferID\n    INNER JOIN Segment s ON it.ItineraryID = s.ItineraryID\n    WHERE s.DepartureIATACode = 'CDG' AND s.ArrivalIATACode IN ('LHR', 'LGW')\n      AND DATE(s.DepartureTime) = '2024-01-19'\n)\nSELECT o.FlightOfferID AS OutboundFlightOfferID, r.FlightOfferID AS ReturnFlightOfferID, o.TotalPrice + r.TotalPrice AS TotalTripPrice, o.Duration + r.Duration AS TotalTripDuration\nFROM OutboundItinerary o\nCROSS JOIN ReturnItinerary r\nORDER BY TotalTripPrice ASC\nLIMIT 1;"}
+{"sql_query":"WITH Outbound AS (\n    SELECT\n        fo.FlightOfferID,\n        SUM(fo.TotalPrice) AS OutboundTotalPrice,\n        STRING_AGG(s.DepartureIATACode || '-' || s.ArrivalIATACode, ', ') AS OutboundRoute,\n        MIN(s.DepartureTime) AS OutboundDepartureTime,\n        MAX(s.ArrivalTime) AS OutboundArrivalTime\n    FROM\n        FlightOffer fo\n    INNER JOIN Itinerary i ON fo.FlightOfferID = i.FlightOfferID\n    INNER JOIN Segment s ON i.ItineraryID = s.ItineraryID\n    WHERE\n        s.DepartureIATACode IN ('LHR', 'LGW', 'STN', 'LCY') AND\n        s.ArrivalIATACode IN ('CDG', 'ORY', 'BVA', 'LBG', 'XCR') AND\n        DATE(s.DepartureTime) = '2023-12-16'\n    GROUP BY\n        fo.FlightOfferID\n),\nReturn AS (\n    SELECT\n        fo.FlightOfferID,\n        SUM(fo.TotalPrice) AS ReturnTotalPrice,\n        STRING_AGG(s.DepartureIATACode || '-' || s.ArrivalIATACode, ', ') AS ReturnRoute,\n        MIN(s.DepartureTime) AS ReturnDepartureTime,\n        MAX(s.ArrivalTime) AS ReturnArrivalTime\n    FROM\n        FlightOffer fo\n    INNER JOIN Itinerary i ON fo.FlightOfferID = i.FlightOfferID\n    INNER JOIN Segment s ON i.ItineraryID = s.ItineraryID\n    WHERE\n        s.DepartureIATACode IN ('CDG', 'ORY', 'BVA', 'LBG', 'XCR') AND\n        s.ArrivalIATACode IN ('LHR', 'LGW', 'STN', 'LCY') AND\n        DATE(s.DepartureTime) = '2024-01-19'\n    GROUP BY\n        fo.FlightOfferID\n)\nSELECT\n    o.FlightOfferID AS OutboundFlightOfferID,\n    o.OutboundTotalPrice,\n    o.OutboundRoute,\n    o.OutboundDepartureTime,\n    o.OutboundArrivalTime,\n    r.FlightOfferID AS ReturnFlightOfferID,\n    r.ReturnTotalPrice,\n    r.ReturnRoute,\n    r.ReturnDepartureTime,\n    r.ReturnArrivalTime,\n    (o.OutboundTotalPrice + r.ReturnTotalPrice) AS TotalPrice\nFROM\n    Outbound o\nCROSS JOIN Return r\nORDER BY\n    TotalPrice ASC\nLIMIT 1;"}
 ********************************************
 
 --------------------------------------------------------------------------------
@@ -53,300 +127,37 @@ Arguments:
 user_proxy (to chat_manager):
 
 ***** Response from calling function "run_sql" *****
-query results [(5, 5, Decimal('492.54'), 2.6666666666666665)]
+query results [(5, Decimal('263.70'), 'LHR-CDG', datetime.datetime(2023, 12, 16, 11, 30), datetime.datetime(2023, 12, 16, 13, 50), 5, Decimal('263.70'), 'CDG-LHR', datetime.datetime(2024, 1, 19, 18, 0), datetime.datetime(2024, 1, 19, 18, 20), Decimal('527.40'))]
 ****************************************************
 
 --------------------------------------------------------------------------------
 travel_agent (to chat_manager):
 
-The cheapest flight from London (either LHR or LGW airports) to Paris (CDG airport) leaving on the 16th of December 2023 and returning on the 19th January 2024 has a total price of £492.54. The total duration of the round trip is approximately 2 hours and 40 minutes.
+The cheapest flight from London to Paris, leaving on the 16th of December 2023 and returning on the 19th of January 2024, is as follows:
 
-Please let me know if you would like to book this flight or need more details on the journey, including stops and intermediate flights.
+- **Outbound Flight:**
+  - Flight Offer ID: 5
+  - Total Price: $263.70
+  - Route: London Heathrow (LHR) to Paris Charles de Gaulle (CDG)
+  - Departure Time: 16th December 2023, 11:30 AM
+  - Arrival Time: 16th December 2023, 1:50 PM
+
+- **Return Flight:**
+  - Flight Offer ID: 5
+  - Total Price: $263.70
+  - Route: Paris Charles de Gaulle (CDG) to London Heathrow (LHR)
+  - Departure Time: 19th January 2024, 6:00 PM
+  - Arrival Time: 19th January 2024, 6:20 PM
+
+The total cost for the round trip is $527.40.
+
+Please note that all times are local and currency is in US dollars.
 
 --------------------------------------------------------------------------------
 senior_analyst (to chat_manager):
 
-The response from the `travel_agent` does not meet the specified criteria for the following reason:
-
-2. Flight Leg Details: The response lacks detailed information on all flight segments, including intermediate legs and stops, if applicable. The pricing is mentioned, but the breakdown for each leg is not provided.
-
-To correct this, the `analyst` should be advised to construct a more detailed query that retrieves information about each segment of the journey, including departure and arrival times, terminals, flight numbers, and any stops along the way. Additionally, the query should provide a breakdown of the pricing for each segment.
-
-Recommendation for the `analyst`:
-Construct a detailed query that includes the following:
-- All segments of the cheapest round trip, including the flight numbers, departure and arrival times, and terminals for both the outbound and return flights.
-- Information on whether there are any stops for each segment and details about these stops if they exist.
-- A breakdown of the pricing for each segment, if available, to provide the user with a more comprehensive understanding of the costs involved.
-
-Here's an example of a more detailed query structure:
-
-```sql
-WITH RankedPrices AS (
-    SELECT
-        fo.FlightOfferID,
-        fo.TotalPrice,
-        RANK() OVER (ORDER BY fo.TotalPrice ASC) AS price_rank
-    FROM FlightOffer fo
-),
-CheapestFlightOffer AS (
-    SELECT FlightOfferID
-    FROM RankedPrices
-    WHERE price_rank = 1
-)
-SELECT
-    s.SegmentID,
-    s.DepartureIATACode,
-    s.DepartureTerminal,
-    s.DepartureTime,
-    s.ArrivalIATACode,
-    s.ArrivalTerminal,
-    s.ArrivalTime,
-    s.CarrierCode,
-    s.FlightNumber,
-    s.AircraftCode,
-    s.Duration,
-    s.NumberOfStops,
-    tp.PriceTotal,
-    tp.Currency
-FROM Segment s
-JOIN Itinerary i ON s.ItineraryID = i.ItineraryID
-JOIN CheapestFlightOffer cfo ON i.FlightOfferID = cfo.FlightOfferID
-JOIN TravelerPricing tp ON cfo.FlightOfferID = tp.FlightOfferID
-WHERE s.DepartureIATACode IN ('LHR', 'LGW') AND s.ArrivalIATACode = 'CDG'
-   OR s.DepartureIATACode = 'CDG' AND s.ArrivalIATACode IN ('LHR', 'LGW')
-ORDER BY s.DepartureTime;
-```
-
-This query should be adjusted to match the existing database schema and to ensure it captures both the outbound and return segments of the journey. It should also include any necessary JOINs with the FareDetailsBySegment table if a breakdown of pricing per segment is required.
+TERMINATE
 
 --------------------------------------------------------------------------------
-analyst (to chat_manager):
-
-***** Suggested function Call: run_sql *****
-Arguments: 
-{"sql_query":"WITH OutboundSegments AS (\n    SELECT s.*\n    FROM Segment s\n    INNER JOIN Itinerary i ON s.ItineraryID = i.ItineraryID\n    INNER JOIN FlightOffer fo ON i.FlightOfferID = fo.FlightOfferID\n    WHERE s.DepartureIATACode IN ('LHR', 'LGW') AND s.ArrivalIATACode = 'CDG'\n      AND DATE(s.DepartureTime) = '2023-12-16'\n),\nReturnSegments AS (\n    SELECT s.*\n    FROM Segment s\n    INNER JOIN Itinerary i ON s.ItineraryID = i.ItineraryID\n    INNER JOIN FlightOffer fo ON i.FlightOfferID = fo.FlightOfferID\n    WHERE s.DepartureIATACode = 'CDG' AND s.ArrivalIATACode IN ('LHR', 'LGW')\n      AND DATE(s.DepartureTime) = '2024-01-19'\n),\nCheapestRoundTrip AS (\n    SELECT\n        o.SegmentID AS OutboundSegmentID,\n        r.SegmentID AS ReturnSegmentID,\n        fo.TotalPrice,\n        fo.Currency\n    FROM OutboundSegments o\n    CROSS JOIN ReturnSegments r\n    INNER JOIN FlightOffer fo ON o.ItineraryID = fo.FlightOfferID AND r.ItineraryID = fo.FlightOfferID\n    ORDER BY fo.TotalPrice ASC\n    LIMIT 1\n)\nSELECT\n    s.SegmentID,\n    s.DepartureIATACode,\n    s.DepartureTerminal,\n    s.DepartureTime,\n    s.ArrivalIATACode,\n    s.ArrivalTerminal,\n    s.ArrivalTime,\n    s.CarrierCode,\n    s.FlightNumber,\n    s.AircraftCode,\n    s.Duration,\n    s.NumberOfStops,\n    tp.PriceTotal,\n    tp.Currency,\n    fds.Cabin,\n    fds.FareBasis,\n    fds.Class,\n    fds.IncludedCheckedBagsQuantity\nFROM CheapestRoundTrip crt\nINNER JOIN Segment s ON s.SegmentID = crt.OutboundSegmentID OR s.SegmentID = crt.ReturnSegmentID\nINNER JOIN TravelerPricing tp ON tp.FlightOfferID = crt.OutboundSegmentID OR tp.FlightOfferID = crt.ReturnSegmentID\nINNER JOIN FareDetailsBySegment fds ON fds.SegmentID = s.SegmentID\nORDER BY s.DepartureTime;"}
-********************************************
-
---------------------------------------------------------------------------------
-
->>>>>>>> EXECUTING FUNCTION run_sql...
-An error occurred: (psycopg2.errors.UndefinedFunction) operator does not exist: character varying = integer
-LINE 25:     INNER JOIN FlightOffer fo ON o.ItineraryID = fo.FlightOf...
-                                                        ^
-HINT:  No operator matches the given name and argument types. You might need to add explicit type casts.
-
-[SQL: WITH OutboundSegments AS (
-    SELECT s.*
-    FROM Segment s
-    INNER JOIN Itinerary i ON s.ItineraryID = i.ItineraryID
-    INNER JOIN FlightOffer fo ON i.FlightOfferID = fo.FlightOfferID
-    WHERE s.DepartureIATACode IN ('LHR', 'LGW') AND s.ArrivalIATACode = 'CDG'
-      AND DATE(s.DepartureTime) = '2023-12-16'
-),
-ReturnSegments AS (
-    SELECT s.*
-    FROM Segment s
-    INNER JOIN Itinerary i ON s.ItineraryID = i.ItineraryID
-    INNER JOIN FlightOffer fo ON i.FlightOfferID = fo.FlightOfferID
-    WHERE s.DepartureIATACode = 'CDG' AND s.ArrivalIATACode IN ('LHR', 'LGW')
-      AND DATE(s.DepartureTime) = '2024-01-19'
-),
-CheapestRoundTrip AS (
-    SELECT
-        o.SegmentID AS OutboundSegmentID,
-        r.SegmentID AS ReturnSegmentID,
-        fo.TotalPrice,
-        fo.Currency
-    FROM OutboundSegments o
-    CROSS JOIN ReturnSegments r
-    INNER JOIN FlightOffer fo ON o.ItineraryID = fo.FlightOfferID AND r.ItineraryID = fo.FlightOfferID
-    ORDER BY fo.TotalPrice ASC
-    LIMIT 1
-)
-SELECT
-    s.SegmentID,
-    s.DepartureIATACode,
-    s.DepartureTerminal,
-    s.DepartureTime,
-    s.ArrivalIATACode,
-    s.ArrivalTerminal,
-    s.ArrivalTime,
-    s.CarrierCode,
-    s.FlightNumber,
-    s.AircraftCode,
-    s.Duration,
-    s.NumberOfStops,
-    tp.PriceTotal,
-    tp.Currency,
-    fds.Cabin,
-    fds.FareBasis,
-    fds.Class,
-    fds.IncludedCheckedBagsQuantity
-FROM CheapestRoundTrip crt
-INNER JOIN Segment s ON s.SegmentID = crt.OutboundSegmentID OR s.SegmentID = crt.ReturnSegmentID
-INNER JOIN TravelerPricing tp ON tp.FlightOfferID = crt.OutboundSegmentID OR tp.FlightOfferID = crt.ReturnSegmentID
-INNER JOIN FareDetailsBySegment fds ON fds.SegmentID = s.SegmentID
-ORDER BY s.DepartureTime;]
-(Background on this error at: https://sqlalche.me/e/20/f405)
-user_proxy (to chat_manager):
-
-***** Response from calling function "run_sql" *****
-None
-****************************************************
-
---------------------------------------------------------------------------------
-analyst (to chat_manager):
-
-It appears there was an issue with the query execution, as it returned no results. To address this, I will revise the query to correct any errors and ensure it captures both the outbound and return segments of the journey, including all necessary details.
-
-Here is the revised SQL query:
-
-```sql
-WITH CheapestOutbound AS (
-    SELECT
-        fo.FlightOfferID,
-        MIN(fo.TotalPrice) AS MinPrice
-    FROM FlightOffer fo
-    INNER JOIN Itinerary it ON fo.FlightOfferID = it.FlightOfferID
-    INNER JOIN Segment s ON it.ItineraryID = s.ItineraryID
-    WHERE s.DepartureIATACode IN ('LHR', 'LGW') AND s.ArrivalIATACode = 'CDG'
-      AND DATE(s.DepartureTime) = '2023-12-16'
-    GROUP BY fo.FlightOfferID
-    ORDER BY MinPrice ASC
-    LIMIT 1
-),
-CheapestReturn AS (
-    SELECT
-        fo.FlightOfferID,
-        MIN(fo.TotalPrice) AS MinPrice
-    FROM FlightOffer fo
-    INNER JOIN Itinerary it ON fo.FlightOfferID = it.FlightOfferID
-    INNER JOIN Segment s ON it.ItineraryID = s.ItineraryID
-    WHERE s.DepartureIATACode = 'CDG' AND s.ArrivalIATACode IN ('LHR', 'LGW')
-      AND DATE(s.DepartureTime) = '2024-01-19'
-    GROUP BY fo.FlightOfferID
-    ORDER BY MinPrice ASC
-    LIMIT 1
-),
-CheapestRoundTrip AS (
-    SELECT 
-        o.FlightOfferID AS OutboundFlightOfferID,
-        r.FlightOfferID AS ReturnFlightOfferID
-    FROM CheapestOutbound o, CheapestReturn r
-)
-SELECT
-    s.SegmentID,
-    s.DepartureIATACode,
-    s.DepartureTerminal,
-    s.DepartureTime,
-    s.ArrivalIATACode,
-    s.ArrivalTerminal,
-    s.ArrivalTime,
-    s.CarrierCode,
-    s.FlightNumber,
-    s.AircraftCode,
-    s.Duration,
-    s.NumberOfStops,
-    tp.PriceTotal,
-    tp.Currency,
-    fds.Cabin,
-    fds.FareBasis,
-    fds.Class,
-    fds.IncludedCheckedBagsQuantity
-FROM Segment s
-INNER JOIN Itinerary i ON s.ItineraryID = i.ItineraryID
-INNER JOIN CheapestRoundTrip crt ON i.FlightOfferID = crt.OutboundFlightOfferID OR i.FlightOfferID = crt.ReturnFlightOfferID
-INNER JOIN TravelerPricing tp ON i.FlightOfferID = tp.FlightOfferID
-INNER JOIN FareDetailsBySegment fds ON fds.SegmentID = s.SegmentID
-ORDER BY s.DepartureTime;
-```
-
-This query finds the cheapest outbound and return flight offers, then joins them to retrieve detailed segment information, traveler pricing, and fare details by segment. The results are ordered by departure time to provide chronological order of the flights. If the database schema allows, this query should capture the correct details for the cheapest round-trip flights from London to Paris, including all required segment and pricing information.
-
---------------------------------------------------------------------------------
-user_proxy (to chat_manager):
-
-***** Suggested function Call: run_sql *****
-Arguments: 
-{"sql_query":"WITH CheapestOutbound AS (\n    SELECT\n        fo.FlightOfferID,\n        MIN(fo.TotalPrice) AS MinPrice\n    FROM FlightOffer fo\n    INNER JOIN Itinerary it ON fo.FlightOfferID = it.FlightOfferID\n    INNER JOIN Segment s ON it.ItineraryID = s.ItineraryID\n    WHERE s.DepartureIATACode IN ('LHR', 'LGW') AND s.ArrivalIATACode = 'CDG'\n      AND DATE(s.DepartureTime) = '2023-12-16'\n    GROUP BY fo.FlightOfferID\n    ORDER BY MinPrice ASC\n    LIMIT 1\n),\nCheapestReturn AS (\n    SELECT\n        fo.FlightOfferID,\n        MIN(fo.TotalPrice) AS MinPrice\n    FROM FlightOffer fo\n    INNER JOIN Itinerary it ON fo.FlightOfferID = it.FlightOfferID\n    INNER JOIN Segment s ON it.ItineraryID = s.ItineraryID\n    WHERE s.DepartureIATACode = 'CDG' AND s.ArrivalIATACode IN ('LHR', 'LGW')\n      AND DATE(s.DepartureTime) = '2024-01-19'\n    GROUP BY fo.FlightOfferID\n    ORDER BY MinPrice ASC\n    LIMIT 1\n),\nCheapestRoundTrip AS (\n    SELECT \n        o.FlightOfferID AS OutboundFlightOfferID,\n        r.FlightOfferID AS ReturnFlightOfferID\n    FROM CheapestOutbound o, CheapestReturn r\n)\nSELECT\n    s.SegmentID,\n    s.DepartureIATACode,\n    s.DepartureTerminal,\n    s.DepartureTime,\n    s.ArrivalIATACode,\n    s.ArrivalTerminal,\n    s.ArrivalTime,\n    s.CarrierCode,\n    s.FlightNumber,\n    s.AircraftCode,\n    s.Duration,\n    s.NumberOfStops,\n    tp.PriceTotal,\n    tp.Currency,\n    fds.Cabin,\n    fds.FareBasis,\n    fds.Class,\n    fds.IncludedCheckedBagsQuantity\nFROM Segment s\nINNER JOIN Itinerary i ON s.ItineraryID = i.ItineraryID\nINNER JOIN CheapestRoundTrip crt ON i.FlightOfferID = crt.OutboundFlightOfferID OR i.FlightOfferID = crt.ReturnFlightOfferID\nINNER JOIN TravelerPricing tp ON i.FlightOfferID = tp.FlightOfferID\nINNER JOIN FareDetailsBySegment fds ON fds.SegmentID = s.SegmentID\nORDER BY s.DepartureTime;"}
-********************************************
-
---------------------------------------------------------------------------------
-
->>>>>>>> EXECUTING FUNCTION run_sql...
-user_proxy (to chat_manager):
-
-***** Response from calling function "run_sql" *****
-query results [(3, 'LHR', '4', datetime.datetime(2023, 12, 16, 11, 30), 'CDG', '2E', datetime.datetime(2023, 12, 16, 13, 50), 'AF', '1581', '321', 1.3333333333333333, 0, Decimal('246.27'), 'EUR', 'ECONOMY', 'TYL0ABLA', 'T', 0), (10, 'CDG', '2E', datetime.datetime(2024, 1, 19, 18, 0), 'LHR', '4', datetime.datetime(2024, 1, 19, 18, 20), 'AF', '1180', '319', 1.3333333333333333, 0, Decimal('246.27'), 'EUR', 'ECONOMY', 'TYL0ABLA', 'T', 0)]
-****************************************************
-
---------------------------------------------------------------------------------
-travel_agent (to chat_manager):
-
-Here are the details for the cheapest round-trip flights from London to Paris:
-
-**Outbound Flight:**
-- **Flight Number:** AF 1581
-- **Aircraft:** Airbus 321
-- **Departure:** London Heathrow (LHR), Terminal 4 at 11:30 AM on December 16, 2023
-- **Arrival:** Paris Charles de Gaulle (CDG), Terminal 2E at 1:50 PM on December 16, 2023
-- **Duration:** Approximately 1 hour and 20 minutes
-- **Number of Stops:** Direct (0 stops)
-- **Class:** Economy
-- **Fare Basis:** TYL0ABLA
-- **Included Checked Bags:** 0
-- **Price:** €246.27
-
-**Return Flight:**
-- **Flight Number:** AF 1180
-- **Aircraft:** Airbus 319
-- **Departure:** Paris Charles de Gaulle (CDG), Terminal 2E at 6:00 PM on January 19, 2024
-- **Arrival:** London Heathrow (LHR), Terminal 4 at 6:20 PM on January 19, 2024
-- **Duration:** Approximately 1 hour and 20 minutes
-- **Number of Stops:** Direct (0 stops)
-- **Class:** Economy
-- **Fare Basis:** TYL0ABLA
-- **Included Checked Bags:** 0
-- **Price:** €246.27
-
-The total price for the round trip is €492.54, which is approximately £492.54 depending on the exchange rate at the time of booking.
-
-Would you like to proceed with this booking or need further assistance?
-
---------------------------------------------------------------------------------
-senior_analyst (to chat_manager):
-
-PASS
-
---------------------------------------------------------------------------------
-travel_agent (to chat_manager):
-
-Here are the details for the cheapest round-trip flights from London to Paris:
-
-**Outbound Flight:**
-- **Flight Number:** AF 1581
-- **Aircraft:** Airbus 321
-- **Departure:** London Heathrow (LHR), Terminal 4 at 11:30 AM on December 16, 2023
-- **Arrival:** Paris Charles de Gaulle (CDG), Terminal 2E at 1:50 PM on December 16, 2023
-- **Duration:** Approximately 1 hour and 20 minutes
-- **Number of Stops:** Direct (0 stops)
-- **Class:** Economy
-- **Fare Basis:** TYL0ABLA
-- **Included Checked Bags:** 0
-- **Price:** €246.27
-
-**Return Flight:**
-- **Flight Number:** AF 1180
-- **Aircraft:** Airbus 319
-- **Departure:** Paris Charles de Gaulle (CDG), Terminal 2E at 6:00 PM on January 19, 2024
-- **Arrival:** London Heathrow (LHR), Terminal 4 at 6:20 PM on January 19, 2024
-- **Duration:** Approximately 1 hour and 20 minutes
-- **Number of Stops:** Direct (0 stops)
-- **Class:** Economy
-- **Fare Basis:** TYL0ABLA
-- **Included Checked Bags:** 0
-- **Price:** €246.27
-
-The total price for the round trip is €492.54, which is approximately £492.54 depending on the exchange rate at the time of booking.
-
-Would you like to proceed with this booking or need further assistance? TERMINATE
+WARNING:autogen.agentchat.groupchat:GroupChat select_speaker failed to resolve the next speaker's name. Speaker selection will default to the next speaker in the list. This is because the speaker selection OAI call returned:
+TERMINATE
