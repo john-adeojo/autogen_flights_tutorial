@@ -50,7 +50,7 @@ This work is licensed under a [Creative Commons Attribution 4.0 International Li
 
 If you use or adapt this work, please credit the author and the company as follows:
 
-"Auto Gen Tutorial: Open Domain Question Answering with Wikipedia" by John Adeojo from Data-Centric Solutions, used under CC BY 4.0 / Desaturated from original.
+"Auto Gen Flights Tutorial" by John Adeojo from Data-Centric Solutions, used under CC BY 4.0 / Desaturated from original.
 
 ## Example Citation
 
